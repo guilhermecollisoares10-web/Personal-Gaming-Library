@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title id="pageTitle"></title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+		<link rel="stylesheet" href="Bibliotecas/CSS.css">
+		<link rel="stylesheet" href="Bibliotecas/menuFixo.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+	
+	<style>
+	@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Share+Tech+Mono&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Orbitron:wght@400..900&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Share+Tech+Mono&display=swap');
+	:root {
+		--bg-color: #10100f;
+		--tx-color1: white;
+		--fn-color: #314c53;
+		--tx-color4: black;
+		--cb-color: #121212;
+		transition: background-color 0.3s, color 0.3s;
+		}
+		.light-mode {
+		--bg-color: #fdf2c5;
+		--tx-color1: #000000;
+		--tx-color4: #efd8a4;
+		--cb-color: #e7edea;
+		--fn-color: #ffffff;
+		transition: background-color 0.3s, color 0.3s;
+		}
+		.dark-mode {
+		--bg-color: #10100f;
+		--tx-color1: white;
+		--tx-color4: #2b2726;
+		--cb-color: #121212;
+		--fn-color: #314c53;
+		transition: background-color 0.3s, color 0.3s;
+		}
+		body {
+		transition: background-color 0.3s, color 0.3s;
+		}
+	h1 {
+	font-family: "Fjalla One", sans-serif;
+	color: var(--tx-color1);
+	font-size: 4vw;
+	}
+	.bar {
+	font-family: "Fjalla One", sans-serif;
+	font-size: 3vw;
+	}
+	h2 {
+	font-family: "Fjalla One", sans-serif;
+	}
+	button {
+	cursor: pointer;
+	}
+	body {
+		background-color: var(--bg-color);
+		}
+		.cfg {
+		border: solid black 3px;
+		padding: 10px;
+		margin: 30px;
+		border-radius: 15px;
+		box-shadow: 10px 10px 5px gray;
+		background-color: #8e8e8e;
+		color: #bd3737;
+		font-size: 1vw;
+		font-family: "Fjalla One", sans-serif;
+		}
+		.gpu {
+		border: solid black 3px;
+		padding: 3px;
+		border-radius: 15px;
+		box-shadow: 6px 6px 1px gray;
+		background-color: #9e9e9e;
+		font-size: 1vw;
+		}
+		.cpu {
+		border: solid black 3px;
+		padding: 3px;
+		border-radius: 15px;
+		box-shadow: 6px 6px 1px gray;
+		background-color: #9e9e9e;
+		font-size: 1vw;
+		}
+		.plm {
+		border: solid black 3px;
+		padding: 3px;
+		border-radius: 15px;
+		box-shadow: 6px 6px 1px gray;
+		background-color: #9e9e9e;
+		font-size: 1vw;
+		}
+		.fll {
+		padding: 15px;
+		margin: 10px;
+		justify-content: space-around;
+		background-color: #808080;
+		color: var(--tx-color1);
+		font-family: "Fjalla One", sans-serif;
+		}
+		ul {
+		font-family: "Fjalla One", sans-serif;
+		}
+		button:hover {
+		background-color: var(--tx-color4);
+		box-shadow: 4px 4px 3px 3px black;
+		transform: scale(1.03);
+		}
+		a {
+		text-decoration: none;
+		color: var(--tx-color1);
+		}
+		a:hover {
+		text-decoration: underline;
+		}
+				.menuu {
+		position: fixed;
+		display: inline-block;
+		top: 3vw;
+		left: 85vw;
+		z-index: 111111111111111111;
+		
+		
+		}
+		.btnm {
+		 cursor: pointer;
+		 background-color:var(--fn-color);
+		border: 3px solid white;
+		border-radius: 15px;
+		padding: 13px;
+		color: var(--tx-color1);
+		font-size: 1vw;
+
+		}
+		.mencont {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 100000000000000000000000000000;
+		background-color: #ffffff;
+		max-height: 90vh;
+		box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+		min-width: 120px;
+		max-width: 140px;
+		background-color:var(--fn-color);
+		border: 1px solid #ccc;
+        border-radius: 5px;
+		padding: 13px;
+		color: var(--tx-color1);
+		font-size: 1vw;
+		margin-top: 1vw;
+		overflow-y: auto;
+		}
+
+		.show {
+		display: block;
+		}
+		.mencont a {
+		display: block;
+		padding: 2vw;
+		text-decoration: none;
+		color: var(--tx-color1);
+		margin-top: 2vw;
+		border: 2px solid white;
+		background-color: #121212;
+		border-radius: 13px;
+		box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+		transition: transform 0.5s;
+		}
+		.mencont a:hover {
+		transform: scale(1.05);
+		}
+		.color {
+		background-color:#1a1c27;
+		border: 3px solid white;
+		border-radius: 15px;
+		padding: 13px;
+		color: white;
+		font-size: 1vw;
+		margin-top: 10px;
+		}
+	</style>
+	</head>
+	<body id="body">
+	<div class="menu">
+		<!--<div class="zrd"><a style="font-size: 1vw;" href="zerados.html"><button class="btnz">Jogos Zerados</button></a></div>-->
+		<div class="abn"><a style="font-size: 1vw;" href="Adicionar_Jogos.html"><button class="btna">Adiconar Jogos</button></a></div>
+		<h1 class="bar"><a style="color: var(--tx-color1);" href="biblioteca de jogos.html"><div class="bib">Biblioteca de Jogos</div></a></h1>
+		<div class="est"><a style="font-size: 1vw;" href="Estatísticas.html"><button class="btne">Estatísticas de Desepenho</button></a></div>
+		<div class="menuu">
+							<button id="btnc" class="btnm"> Configurações <br><i class="material-symbols-outlined">settings</i></button>
+								<div id="cont" class="mencont">
+									  <button id="btndk" class="color">modo escuro</button>
+									  <button id="btnlg" class="color">modo claro</button>
+								</div>
+							</div>
+		</div>
+		<div style=" position: relative; top: 150px;">
+		
+		<h1 id="titulo" style="text-align: center;"></h1>
+		<h2 style="color: var(--tx-color1);text-align:left; font-size: 2vw;">Descrição do jogo:</h2>
+		<div class="fll" style="border: solid 2px black;border-radius: 15px;display: flex;">
+			<div>			
+				<ul style="text-align:left; font-size:2vw;">
+					
+					<li>Gênero: <span id="genero"></span></li>
+					<li>Tempo de Jogo: <span id="temp"></span></li>
+					<li>Nota: <span id="not"></span></li>
+					<li>Desenvolvedora: <span id="dev"></span></li>
+					<li>Lançamento: <span id="lan"></span></li>
+
+						<ul>
+							<li><a style="font-size: 1vw;" href="Estatísticas.html">Estatísticas de Desepenho</a></li></p></li>
+						</ul>
+				</ul>
+			</div>
+			<div>
+			<img id="imagem" style="width: 30vw; height: auto; border: solid 2px black; border-radius: 15px;">
+			</div>
+		</div>
+		
+			<div class="cfg">
+				<h2 style="color: var(--tx-color1)">Configuração do Computador</h2><br>
+				<ul>
+					<div class="gpu"><li style="color: #Nota: 9f111b;">Placa De Vídeo: AMD Radeon RX6600</li></div>
+					<div class="cpu"><p><li style="color: #bd3737;">Processador: AMD ryzen 7 5700G</li></p></div>
+					<div class="plm"><li style="color: #b11623;">Placa-Mãe: ASUS TUF Gaming A520M-PLUS||</li><br></div>
+				</ul>
+			</div>
+			</div>
+			<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				
+
+				// Pegar nome do jogo pela URL
+				const params = new URLSearchParams(window.location.search);
+				const nome = params.get("nome");
+				document.title = nome;
+				// Buscar dados no localStorage
+				const jogos = JSON.parse(localStorage.getItem("bibliotecaJogos"));
+				const dados = jogos[nome];
+
+				// Preencher página
+				document.getElementById("titulo").textContent = nome;
+				document.getElementById("imagem").src = dados.codigo;
+				document.getElementById("genero").textContent = dados.genero;
+				document.getElementById("dev").textContent = dados.desenvolvedora;
+
+				// Campos extras (caso existam)
+				document.getElementById("not").textContent = dados.nota || "Sem nota";
+				document.getElementById("temp").textContent = `${dados.tempo} horas` || "Não informado";
+				document.getElementById("lan").textContent = dados.lancamento || "Não informado";
+
+
+				
+				const body = document.body;
+				const btnd = document.getElementById('btndk');
+				const btnl = document.getElementById('btnlg');
+				const cfg  = document.getElementById('btnc');
+				const con  = document.getElementById('cont');
+
+				// Nome da página atual (ex: "biblioteca de jogos.html")
+				const page = location.pathname.split("/").pop();
+
+				// Chave única para cada página
+				const key = "theme_" + page;
+
+				// Carregar tema salvo
+				const savedTheme = localStorage.getItem(key);
+
+				if (savedTheme === "dark") {
+					body.classList.add("dark-mode");
+					body.classList.remove("light-mode");
+				} else {
+					body.classList.add("light-mode");
+					body.classList.remove("dark-mode");
+				}
+
+				// Botão modo escuro
+				btnd.addEventListener("click", function () {
+					body.classList.remove("light-mode");
+					body.classList.add("dark-mode");
+					localStorage.setItem(key, "dark");
+				});
+
+				// Botão modo claro
+				btnl.addEventListener("click", function () {
+					body.classList.remove("dark-mode");
+					body.classList.add("light-mode");
+					localStorage.setItem(key, "light");
+				});
+
+				// Mostrar/ocultar configurações
+				cfg.addEventListener("click", function () {
+					con.classList.toggle("show");
+				});
+
+			});
+
+
+		</script>
+	</body>
+</html>

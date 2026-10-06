@@ -1,0 +1,403 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Biblioteca</title>
+		<link rel="stylesheet" href="Bibliotecas/CSS.css">
+		<link rel="stylesheet" href="Bibliotecas/menuFixo.css">	
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+
+	</head>
+		<style>
+		@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+		@media (min-width:981px){
+
+
+		:root {
+		--bg-color: #0f141a;
+		--tx-color1: white;
+		--fn-color: #314c53;
+		--tx-color4: black;
+		--cb-color: #121212;
+		transition: background-color 0.3s, color 0.3s;
+		}
+		.light-mode {
+		--bg-color: #fdf2c5;
+		--tx-color1: #000000;
+		--tx-color4: #000000;
+		--cb-color: #e7edea;
+		--fn-color: #ffffff;
+		transition: background-color 0.3s, color 0.3s;
+		}
+		.dark-mode {
+		--bg-color: #0f141a;
+		--tx-color1: white;
+		--tx-color4: black;
+		--cb-color: #121212;
+		--fn-color: #314c53;
+		transition: background-color 0.3s, color 0.3s;
+		}
+		body {
+		background-color: var(--bg-color);
+		transition: background-color 0.3s, color 0.3s;
+		}
+		h1 {
+		font-family: "Montserrat", sans-serif;
+		font-size:3vw;
+		}
+		h2 {
+		font-size: 2vw;
+		color: var(--tx-color1);
+		}
+		.mai {
+		font-family: "Montserrat", sans-serif;
+		position:relative;
+		left:0;
+		font-size:2.5vw;
+		}
+		.cfg {
+		border: solid black 3px;
+		padding: 10px;
+		margin: 30px;
+		border-radius: 15px;
+		box-shadow: 10px 10px 5px gray;
+		background-color: #8e8e8e;
+		color: #bd3737;
+		font-size: 20px;
+		font-family: "Montserrat", sans-serif;
+		margin-bottom:15vw;
+		}
+		.gpu {
+		border: solid black 3px;
+		padding: 3px;
+		border-radius: 15px;
+		box-shadow: 6px 6px 1px gray;
+		background-color: #9e9e9e;
+		font-family: "Montserrat", sans-serif;
+		font-size:1vw
+		}
+		.cpu {
+		border: solid black 3px;
+		padding: 3px;
+		border-radius: 15px;
+		box-shadow: 6px 6px 1px gray;
+		background-color: #9e9e9e;
+		font-family: "Montserrat", sans-serif;
+		font-size:1vw
+		}
+		.plm {
+		border: solid black 3px;
+		padding: 3px;
+		border-radius: 15px;
+		box-shadow: 6px 6px 1px gray;
+		background-color: #9e9e9e;
+		font-family: "Montserrat", sans-serif;
+		font-size:1vw
+		}
+		ul {
+		font-family: "Montserrat", sans-serif;
+		color: var(--tx-color1);
+		}
+		table {
+		font-family: "Montserrat", sans-serif;
+		}
+		a {
+		text-decoration: none;
+		color: #c9d1d3;
+		}
+		.ul {
+		text-decoration: none;
+		color: var(--tx-color4);
+		}
+		.btn {
+		background-color:#2b2823;
+		border: 3px solid white;
+		border-radius: 15px;
+		padding: 13px;
+		color: var(--tx-color1);
+		font-size: 1vw;
+		}
+		img {
+		transition: transform 0.5s ease;
+		}
+		.tr {
+		font-size: 1vw
+		}
+		.tab {
+		width: 98%;
+		position:relative;
+		margin:0 0 0.5vw 1vw;
+		}
+		.bibl {
+		color: var(--tx-color1);
+		}
+		img:hover {
+		transform: scale(1.07);
+		box-shadow: 1px 1px 1px 1px black;
+		}
+		button:hover {
+		box-shadow: 4px 4px 3px 3px black;
+		transform: scale(1.05);
+		}
+		button {
+		transition: transform 0.5s ease;
+		cursor: pointer;
+		}
+		.table {
+		display: flex;
+		flex-direction: row;
+		font-family: "Montserrat", sans-serif;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		}
+		.table1 {
+		display: flex;
+		flex-direction: row;
+		font-family: "Montserrat", sans-serif;
+		align-items: center;
+		justify-content: center;
+		}
+		.jg1 {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		margin-right: 0.5vw;
+		margin-left: 2vw;
+		scroll-snap-align: start;
+		}
+		.nm1 {
+		border: 1px solid black;
+		border-radius: 13px;
+		width: 11vw;
+		margin-bottom: 20px;
+		background-color: var(--cb-color);
+		padding: 10px;
+		font-size: 20px;
+		color: var(--tx-color1);
+		}
+		.nm2 {
+		border: 1px solid black;
+		border-radius: 13px;
+		width: 15vw;
+		margin-bottom: 20px;
+		background-color: var(--cb-color);
+		padding: 10px;
+		font-size: 20px;
+		color: var(--tx-color1);
+		}
+		.jg2 {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		margin-right: 1vw;
+		margin-left: 1vw;
+		position: relative;
+		bottom: 0.8vw;
+		}
+		.menuu {
+		position: fixed;
+		display: inline-block;
+		top: 3vw;
+		left: 85vw;
+		z-index: 111111111111111111;
+		
+		
+		}
+		.btnm {
+		 cursor: pointer;
+		 background-color:var(--fn-color);
+		border: 3px solid white;
+		border-radius: 15px;
+		padding: 13px;
+		color: var(--tx-color1);
+		font-size: 1vw;
+
+		}
+		.mencont {
+
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 100000000000000000000000000000;
+		background-color: #ffffff;
+		max-height: 90vh;
+		box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+		min-width: 120px;
+		max-width: 140px;
+		background-color:var(--fn-color);
+		border: 1px solid #ccc;
+        border-radius: 5px;
+		padding: 13px;
+		color: var(--tx-color1);
+		font-size: 1vw;
+		margin-top: 1vw;
+		overflow-y: auto;
+		opacity: 0;
+		max-height: 0;
+		overflow: hidden;
+		transition: opacity 0.4s ease, max-height 0.4s ease;
+		}
+
+		.show {
+
+		opacity: 1;
+		max-height: 500px; /* um valor grande o suficiente */
+		}
+		.mencont a {
+		display: block;
+		padding: 2vw;
+		text-decoration: none;
+		color: var(--tx-color1);
+		margin-top: 2vw;
+		border: 2px solid white;
+		background-color: #121212;
+		border-radius: 13px;
+		box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+		transition: transform 0.5s;
+
+		}
+		.mencont a:hover {
+		transform: scale(1.05);
+		}
+		.color {
+		background-color:#1a1c27;
+		border: 3px solid white;
+		border-radius: 15px;
+		padding: 13px;
+		color: white;
+		font-size: 1vw;
+		margin-top: 10px;
+
+		}
+
+		</style>
+	<body id="body">
+		<div class="menu">
+		<!--<div class="zrd"><a style="font-size: 1vw;" href="file:///C:/Users/Usuario/Desktop/testes/BibliotecaPessoal/zerados.html"><button class="btnz">Jogos Zerados</button></a></div>-->
+		<div class="abn"><a style="font-size: 1vw;" href="Adicionar_Jogos.html"><button class="btna">Adicionar Jogos</button></a></div>
+		<h1 class="bar"><div class="bib">Biblioteca de Jogos</div></h1>	
+		<div class="est"><a style="font-size: 1vw;" href="Estatísticas.html"><button class="btne">Estatísticas de Desepenho</button></a></div>
+							<div class="menuu">
+							<button id="btnc" class="btnm"> Configurações <br><i class="material-symbols-outlined">settings</i></button>
+								<div id="cont" class="mencont">
+									  <button id="btndk" class="color">modo escuro</button>
+									  <button id="btnlg" class="color">modo claro</button>
+								</div>
+							</div>
+		</div>	
+		<div class="men" onclick="close()">
+			
+			<p><h2 style="text-align: center;">Biblioteca completa de jogos <i>instalados</i>:</h2></p>
+		
+			<div class="table">
+				<div class="table" id="painel"></div>			
+			</div>
+			<!--<p><h2 class="mai"style="color: var(--tx-color1);" >Mais:</h2></p>-->
+			<!--<ul>
+			<li><a style="font-size: 1vw;" href="file:///C:/Users/Usuario/Desktop/testes/BibliotecaPessoal/zerados.html"><button class="btn">Jogos Zerados</button></a></li>
+			<li><p><a style="font-size: 1vw;" href="file:///C:/Users/Usuario/Desktop/testes/BibliotecaPessoal/Abandonados.html"><button class="btn">Jogos Abandonados</button></a></p></li>
+			<li><a style="font-size: 1vw;" href="file:///C:/Users/Usuario/Desktop/testes/BibliotecaPessoal/Estat%C3%ADsticas.html"><button class="btn">Estatísticas de Desepenho</button></a></li></p></li>
+			<li><a style="font-size: 25px;" href="file:///C:/Users/Usuario/Desktop/testes/2teste/Jogando.html">Jogando Agora</a></li>
+			</ul>-->
+			<div class="cfg">
+				<h2 style="color: var(--tx-color1)">Configuração do Computador</h2><br>
+				<ul>
+					<div class="gpu"><li style="color: #9f111b;">Placa De Vídeo: AMD Radeon RX6600</li></div>
+					<div class="cpu"><p><li style="color: #bd3737;">Processador: AMD ryzen 7 5700G</li></p></div>
+					<div class="plm"><li style="color: #b11623;">Placa-Mãe: ASUS TUF Gaming A520M-PLUS||</li><br></div>
+				</ul>
+			</div>
+			<p class="bibl">Biblioteca de Jogos, 2026</p>
+			</div>
+		</div>
+
+			<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const button = document.button;
+				const body = document.body;
+				const btnd = document.getElementById('btndk');
+				const btnl = document.getElementById('btnlg');
+				const cfg  = document.getElementById('btnc');
+				const con  = document.getElementById('cont');
+				
+				function mostrarJogosNaBiblioteca() {
+				const painel = document.getElementById("painel");
+				painel.innerHTML = "";
+
+				const jogos = JSON.parse(localStorage.getItem("bibliotecaJogos")) || {};
+
+				for (let [nome, dados] of Object.entries(jogos)) {
+
+					let jogoDiv = document.createElement("div");
+					jogoDiv.className = "jg1"; // usa seu estilo atual
+
+					let nomeDiv = document.createElement("div");
+					nomeDiv.className = "nm1";
+					nomeDiv.textContent = nome;
+
+					let link = document.createElement("a");
+					link.href = `jogo.html?nome=${encodeURIComponent(nome)}`;
+
+					let img = document.createElement("img");
+					img.src = dados.codigo;
+					img.style.width = "13vw";
+					img.style.height = "11vw";
+					img.style.borderRadius = "11px";
+
+					link.appendChild(img);
+					jogoDiv.appendChild(nomeDiv);
+					jogoDiv.appendChild(link);
+
+					painel.appendChild(jogoDiv);
+					}
+				}
+
+				
+				// Nome da página atual (ex: "biblioteca de jogos.html")
+				const page = location.pathname.split("/").pop();
+
+				// Chave única para cada página
+				const key = "theme_" + page;
+
+				// Carregar tema salvo
+				const savedTheme = localStorage.getItem(key);
+
+				if (savedTheme === "dark") {
+					body.classList.add("dark-mode");
+					body.classList.remove("light-mode");
+				} else {
+					body.classList.add("light-mode");
+					body.classList.remove("dark-mode");
+				}
+
+				// Botão modo escuro
+				btnd.addEventListener("click", function () {
+					body.classList.remove("light-mode");
+					body.classList.add("dark-mode");
+					localStorage.setItem(key, "dark");
+				});
+
+				// Botão modo claro
+				btnl.addEventListener("click", function () {
+					body.classList.remove("dark-mode");
+					body.classList.add("light-mode");
+					localStorage.setItem(key, "light");
+				});
+
+				// Mostrar/ocultar configurações
+				cfg.addEventListener("click", function () {
+					con.classList.toggle("show");
+				});
+				
+				mostrarJogosNaBiblioteca();
+
+			});
+			</script>
+	</body>
+</html>

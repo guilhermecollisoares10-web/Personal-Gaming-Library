@@ -1,0 +1,85 @@
+.men {
+		position:relative;
+		top: 10vw;
+		}
+		.bar {
+		color: var(--tx-color1);
+		position:fixed;
+		top: 2.6vw;
+		left: 28.7vw;
+		z-index:100000;
+		height: 3vw;
+		text-align: center;
+		margin: 0;
+		text-decoration:none;
+		border: 1px #0f141a solid;
+		border-radius: 15px;
+		width: 40vw;
+		}
+		.bib {
+		position:relative;
+		top:0;
+		bottom: 3.5vw;
+		background-color: var(--fn-color);
+		width: 40vw;
+		position:relative;
+		left: 0;
+		border: 1px #0f141a solid;
+		border-radius: 15px;
+		text-decoration:none;
+		height: 4vw;
+		}
+		.menu {
+		}
+		/*Botões*/
+		.zrd {
+		position:fixed;
+		left:3vw;
+		z-index:10000000000000000000000;
+		top: 3vw;
+		width:auto;
+		border: 1px #1f1f1f solid;
+		border-radius: 15px;
+		}
+		.btnz {
+		background-color: var(--fn-color);
+		border: 3px solid white;
+		border-radius: 15px;
+		padding: 13px;
+		color: var(--tx-color1);
+		font-size: 1vw;
+		}
+		.abn {
+		position:fixed;
+		left:15vw;
+		z-index:10000000000000000000000;
+		top: 3vw;
+		width:auto;
+		border: 1px #1f1f1f solid;
+		border-radius: 15px;
+		}
+		.btna {
+		background-color: var(--fn-color);
+		border: 3px solid white;
+		border-radius: 15px;
+		padding: 13px;
+		color: var(--tx-color1);
+		font-size: 1vw;
+		}
+		.est {
+		position:fixed;
+		left:70vw;
+		z-index:10000000000000000000000;
+		top: 3vw;
+		width:auto;
+		border: 1px #1f1f1f solid;
+		border-radius: 15px;
+		}
+		.btne {
+		background-color: var(--fn-color);
+		border: 3px solid white;
+		border-radius: 15px;
+		padding: 13px;
+		color: var(--tx-color1);
+		font-size: 1vw;
+		}

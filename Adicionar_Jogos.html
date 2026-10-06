@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	</head>
+	<style>
+	body {
+	background-color: gray;
+	}
+	h1 {
+	color: black;
+	font-size: 20px;
+	}
+	input {
+	padding: 20px;
+	width: 55%;
+	height: 10%;
+	background-color: white;
+	color: black;
+	margin: 10px;
+	}
+	button {
+	cursor: pointer;
+	}
+	.card-jogo {
+    width: 180px;
+    height: 260px;
+    background: #1e1e1e;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.2s;
+	margin-right: 30px;
+	text-align: center;
+	justify-content: center;
+	}	
+	.linha-jogos {
+	display: flex;
+	flex-direction: row;
+	overflow-x: scroll;
+	}
+	.nome-jogo {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+	position: relative;
+	right: 15px;
+	font-size: 30px;
+}
+.jogo-container {
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+.imagem-real {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+button:hover {
+transform: scale(1.1);
+}
+.bar {
+	font-family: "Fjalla One", sans-serif;
+	font-size: 3vw;
+	}
+	</style>
+	<body>
+	<h1 class="bar"><a style="color: var(--tx-color1);" href="biblioteca de jogos.html"><div class="bib">Biblioteca de Jogos</div></a></h1>
+	<h1> Adicionar/ Atualizar/ Remover Jogo da Biblioteca</h1>
+	<div class="container">
+		<label for="nome">Digite o nome do jogo:</label>
+		<input type="text" id="nome" placeholder="Digite o nome"><br>
+		<label for="genero">Digite o genero do jogo:</label>
+		<input type="text" id="genero" placeholder="Digite o genero"><br>
+		<label for="dev">Digite o dev do jogo:</label>
+		<input type="text" id="dev" placeholder="Digite a desenvolvedora(opcional)"><br>
+		<label for="not">Digite a nota para o jogo:</label>
+		<input type="text" id="not" placeholder="Digite a nota(opcional)"><br>
+		<label for="temp">Digite o tempo jogado:</label>
+		<input type="text" id="temp" placeholder="Digite o tempo(opcional)"><br>
+		<label for="lan">Digite o ano em que o jogo foi lançado:</label>
+		<input type="text" id="lan" placeholder="Digite o ano de lancamento do jogo (opcional)"><br>
+		<label for="img">Selecione uma imagem para o jogo:</label>
+		<input type="text" id="img" placeholder="Digite o codigo da imagem"><br>
+		<div style="margin-left: 700px;">
+			<button style="margin-left: 20px; background-color: green; padding: 20px; border-radius: 15px; border: 1px black solid;" id="add">Adicionar</button>
+			<button style="margin-left: 20px; background-color: blue; padding: 20px; border-radius: 15px; border: 1px black solid;" id="atu">Atualizar</button>
+			<button style="margin-left: 20px; background-color: red; padding: 20px; border-radius: 15px; border: 1px black solid;" id="exc" >Excluir</button>
+			<button style="margin-left: 20px; background-color: black;color: white; padding: 20px; border-radius: 15px; border: 1px black solid;" id="exi" >Exibir</button>
+			<button style="margin-left: 20px; background-color: red;color: white; padding: 20px; border-radius: 30px; border: 1px black solid;" id="limp" >Limpar lista</button>
+			<button style="margin-left: 20px; background-color: white;color: black; padding: 20px; border-radius: 30px; border: 1px black solid;" id="show" >Mostrar Cards</button>
+		</div>
+		<p style="padding: 100px;color: black;" id="painel"></p>
+	</div>
+	<script>		
+		let jogos = JSON.parse(localStorage.getItem("bibliotecaJogos")) || {};
+		let adicionar = document.getElementById('add')
+		let atualizar = document.getElementById('atu')
+		let excluir = document.getElementById('exc')
+		let exibir = document.getElementById('exi')
+		let limpar = document.getElementById('limp')
+		let mostrar = document.getElementById('show')
+		let painel = document.getElementById('painel')
+		// Criamos o objeto vazio
+
+		// Função equivalente à sua 'adicionar_jogo' em Python
+		function mostrarJogosBonito() {
+			painel.innerHTML = ""; // limpa o painel
+
+			for (let [nome, dados] of Object.entries(jogos)) {
+				painel.innerHTML += `
+					<p>
+						<strong>${nome}</strong><br>
+						Gênero: ${dados.genero}<br>
+						Desenvolvedora: ${dados.desenvolvedora}<br>
+						Nota: ${dados.nota}<br>
+						Tempo: ${dados.tempo}<br>
+						lancamento: ${dados.lancamento}<br>
+						Codigo: ${dados.codigo}<br>
+					</p>
+					<hr>
+				`;
+			}
+		}
+		
+		
+		function cleanInput() {
+		document.getElementById('nome').value = '';
+		  document.getElementById('genero').value = '';
+		  document.getElementById('dev').value = '';
+		  document.getElementById('not').value = '';
+		  document.getElementById('temp').value = '';
+		  document.getElementById('lan').value = '';
+		  document.getElementById('img').value = '';
+		}
+		function adicionarJogo(nome, genero, desenvolvedora, codigo, tempo, data, nota) {
+		  if (jogos[nome]) {
+			console.log(`'${nome}' já registrado. Atualizando dados...`);
+			
+
+		  } else {
+			console.log(`Adicionando '${nome}' à biblioteca...`);
+		  }
+
+		  // Em JS criamos as propriedades diretamente no objeto
+		  jogos[nome] = {
+			genero: genero,
+			desenvolvedora: desenvolvedora,
+			nota: nota,
+			tempo: tempo,
+			lancamento: data,
+			codigo: codigo
+		  };
+			localStorage.setItem("bibliotecaJogos", JSON.stringify(jogos));
+		}
+		
+		function atualizarJogo(nome, genero, desenvolvedora, codigo, tempo, data, nota) {
+		if (jogos[nome]) {
+			console.log('Atualizando informações')
+			jogos[nome] = {
+			genero: genero,
+			desenvolvedora: desenvolvedora,
+			nota: nota,
+			tempo: tempo,
+			lancamento: data,
+			codigo: codigo
+			};
+			localStorage.setItem("bibliotecaJogos", JSON.stringify(jogos));
+
+		}
+		else {
+			console.log('Jogo nçao encontrado, deseja adiciona-lo?')
+		}
+		}
+		
+		function excluirJogos(nome) {
+		if (jogos[nome]) {
+			delete jogos[nome]
+			console.log('Jogo removido com sucesso')
+			localStorage.setItem("bibliotecaJogos", JSON.stringify(jogos));
+
+		}
+		else {
+			console.log('Jogo não encontrado, deseja adiciona-lo?')
+		}
+		}
+		adicionar.addEventListener('click', function() {
+		let JogoAtual = document.getElementById('nome').value;
+		let Genero = document.getElementById('genero').value;
+		let Dev = document.getElementById('dev').value;
+		let Not = document.getElementById('not').value;
+		let Tempo = document.getElementById('temp').value;
+		let Lan = document.getElementById('lan').value;
+		let Img = document.getElementById('img').value;
+		if (JogoAtual !== '' && Genero !== '' && Dev !== '' && Img !== '') {
+			adicionarJogo(JogoAtual, Genero, Dev, Img, Not, Tempo, Lan);
+			console.log(jogos);
+			painel.textContent = `Jogo '${JogoAtual}' adicionado com sucesso!`
+			cleanInput()
+		}
+		else {
+		console.log('Operacao invalida, digite algo valido')
+		}
+		});
+		
+		atualizar.addEventListener('click', function() {
+		let JogoAtual = document.getElementById('nome').value;
+		let Genero = document.getElementById('genero').value;
+		let Dev = document.getElementById('dev').value;
+		let Not = document.getElementById('not').value;
+		let Tempo = document.getElementById('temp').value;
+		let Lan = document.getElementById('lan').value;
+		let Img = document.getElementById('img').value;
+		if (JogoAtual !== '' && Genero !== '' && Img !== '') {
+			atualizarJogo(JogoAtual, Genero, Dev, Img, Not, Tempo, Lan);
+			console.log('Jogo atualizado com sucesso!')
+			console.log(jogos);
+			painel.textContent = `Jogo '${JogoAtual}' atualizado com sucesso!`
+			cleanInput()
+		}
+		else {
+			painel.textContent = `digite as informações necessarias`
+		}
+		});
+		
+		excluir.addEventListener('click', function() {
+		let JogoAtual = document.getElementById('nome').value;
+		let Genero = document.getElementById('genero').value;
+		let Dev = document.getElementById('dev').value;
+		let Not = document.getElementById('not').value;
+		let Tempo = document.getElementById('temp').value;
+		let Lan = document.getElementById('lan').value;
+		let Img = document.getElementById('img').value;
+		if (JogoAtual !== '') {
+			excluirJogos(JogoAtual);
+			console.log('Jogo excluído com sucesso!')
+			console.log(jogos);
+			painel.textContent = `Jogo '${JogoAtual}' excluído com sucesso!`
+			cleanInput()
+		}
+		});
+		exibir.addEventListener('click', mostrarJogosBonito);
+		limpar.addEventListener('click', function () {
+    localStorage.removeItem("bibliotecaJogos");
+    alert("Biblioteca limpa!");
+    location.reload(); // opcional, atualiza a página
+});
+	mostrar.addEventListener('click', () => location.reload());
+
+
+		// Testando a função
+function mostrarJogosComoCards() {
+    painel.innerHTML = "";
+
+    let container = document.createElement("div");
+    container.className = "linha-jogos";
+
+    for (let [nome, dados] of Object.entries(jogos)) {
+
+        // contêiner externo que agrupa nome + card
+        let jogoContainer = document.createElement("div");
+        jogoContainer.className = "jogo-container";
+
+        // nome do jogo (fora do card)
+        let nomeDiv = document.createElement("div");
+        nomeDiv.className = "nome-jogo";
+        nomeDiv.textContent = nome;
+
+        // card do jogo
+        let card = document.createElement("button");
+        card.className = "card-jogo";
+
+       card.innerHTML = `
+    <img src="${dados.codigo}" class="imagem-real">
+`;
+
+        card.addEventListener("click", function() {
+            window.location.href = `jogo.html?nome=${encodeURIComponent(nome)}`;
+
+        });
+
+        // montar estrutura
+        jogoContainer.appendChild(nomeDiv);
+        jogoContainer.appendChild(card);
+
+        container.appendChild(jogoContainer);
+    }
+
+    painel.appendChild(container);
+}
+
+
+mostrarJogosComoCards()
+		console.log(jogos)
+	</script>
+	</body>
+</html>
