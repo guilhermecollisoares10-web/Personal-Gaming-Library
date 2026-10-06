@@ -119,25 +119,27 @@ transform: scale(1.1);
 		
 		    jogos.forEach(jogo => {
 		        const option = document.createElement("option");
-		        option.value = jogo.nome;
-		        option.textContent = jogo.nome;
+		        option.value = dados.nome;
+		        option.textContent = dados.nome;
 		        select.appendChild(option);
 		    });
 		}
 		
 		carregarSelect();
-		document.getElementById("selectJogo").addEventListener("change", function() {
+		document.getElementById("sel").addEventListener("change", function() {
 		    const nomeSelecionado = this.value;
 		    const jogos = JSON.parse(localStorage.getItem("jogos")) || [];
 		
 		    const jogo = jogos.find(j => j.nome === nomeSelecionado);
 		
 		    if (jogo) {
-		        document.getElementById("nome").value = jogo.nome;
-		        document.getElementById("imagem").value = jogo.imagem;
-		        document.getElementById("genero").value = jogo.genero;
-		        document.getElementById("plataforma").value = jogo.plataforma;
-		        document.getElementById("descricao").value = jogo.descricao;
+		        document.getElementById("nome").value = dados.nome;
+		        document.getElementById("img").value = dados.codigo;
+		        document.getElementById("genero").value = dados.genero;
+		        document.getElementById("temp").value = dados.tempo;
+		        document.getElementById("lan").value = dados.lancamento;
+				document.getElementById("not").value = dados.nota;
+				document.getElementById("dev").value = dados.desenvolvedora;
 		    }
 		});
 
