@@ -12,7 +12,31 @@
 		@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 				@media (max-width: 980px) {
-
+			:root {
+			--bg-color: #0f141a;
+			--tx-color1: white;
+			--fn-color: #314c53;
+			--tx-color4: black;
+			--cb-color: #121212;
+			transition: background-color 0.3s, color 0.3s;
+			}
+			.light-mode {
+			--bg-color: #fdf2c5;
+			--tx-color1: #000000;
+			--tx-color4: #000000;
+			--cb-color: #e7edea;
+			--fn-color: #ffffff;
+			transition: background-color 0.3s, color 0.3s;
+			}
+			.dark-mode {
+			--bg-color: #0f141a;
+			--tx-color1: white;
+			--tx-color4: black;
+			--cb-color: #121212;
+			--fn-color: #314c53;
+			transition: background-color 0.3s, color 0.3s;
+			}
+					
 			body {
 				background-color: var(--bg-color);
 				margin: 0;
@@ -50,8 +74,8 @@
 			}
 
 			.table {
-				flex-direction: column;
-				overflow-x: visible;
+				flex-direction: row;
+				overflow-x: scroll;
 			}
 
 			.jg1, .jg2 {
