@@ -89,6 +89,8 @@ transform: scale(1.1);
 		<input type="text" id="lan" placeholder="Digite o ano de lancamento do jogo (opcional)"><br>
 		<label for="img">Selecione uma imagem para o jogo:</label>
 		<input type="text" id="img" placeholder="Digite o codigo da imagem"><br>
+		<select id="sel" style="padding: 30px; background-color: gray; color: black;">
+		</select>
 		<div style="margin-left: 700px;">
 			<button style="margin-left: 20px; background-color: green; padding: 20px; border-radius: 15px; border: 1px black solid;" id="add">Adicionar</button>
 			<button style="margin-left: 20px; background-color: blue; padding: 20px; border-radius: 15px; border: 1px black solid;" id="atu">Atualizar</button>
@@ -109,8 +111,36 @@ transform: scale(1.1);
 		let mostrar = document.getElementById('show')
 		let painel = document.getElementById('painel')
 		// Criamos o objeto vazio
+		function carregarSelect() {
+		    const jogos = JSON.parse(localStorage.getItem("jogos")) || [];
+		    const select = document.getElementById("sel");
+		
+		    select.innerHTML = '<option value="">Selecione um jogo</option>';
+		
+		    jogos.forEach(jogo => {
+		        const option = document.createElement("option");
+		        option.value = jogo.nome;
+		        option.textContent = jogo.nome;
+		        select.appendChild(option);
+		    });
+		}
+		
+		carregarSelect();
+		document.getElementById("selectJogo").addEventListener("change", function() {
+		    const nomeSelecionado = this.value;
+		    const jogos = JSON.parse(localStorage.getItem("jogos")) || [];
+		
+		    const jogo = jogos.find(j => j.nome === nomeSelecionado);
+		
+		    if (jogo) {
+		        document.getElementById("nome").value = jogo.nome;
+		        document.getElementById("imagem").value = jogo.imagem;
+		        document.getElementById("genero").value = jogo.genero;
+		        document.getElementById("plataforma").value = jogo.plataforma;
+		        document.getElementById("descricao").value = jogo.descricao;
+		    }
+		});
 
-		// Função equivalente à sua 'adicionar_jogo' em Python
 		function mostrarJogosBonito() {
 			painel.innerHTML = ""; // limpa o painel
 
@@ -250,12 +280,12 @@ transform: scale(1.1);
 		limpar.addEventListener('click', function () {
     localStorage.removeItem("bibliotecaJogos");
     alert("Biblioteca limpa!");
-    location.reload(); // opcional, atualiza a página
+    location.reload(); 
 });
 	mostrar.addEventListener('click', () => location.reload());
 
 
-		// Testando a função
+
 function mostrarJogosComoCards() {
     painel.innerHTML = "";
 
@@ -268,12 +298,12 @@ function mostrarJogosComoCards() {
         let jogoContainer = document.createElement("div");
         jogoContainer.className = "jogo-container";
 
-        // nome do jogo (fora do card)
+
         let nomeDiv = document.createElement("div");
         nomeDiv.className = "nome-jogo";
         nomeDiv.textContent = nome;
 
-        // card do jogo
+
         let card = document.createElement("button");
         card.className = "card-jogo";
 
