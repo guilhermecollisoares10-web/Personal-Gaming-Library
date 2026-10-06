@@ -73,10 +73,21 @@
 				margin-bottom: 10px;
 			}
 
-			.table {
+			 .table {
+				display: flex;
 				flex-direction: row;
-				overflow-x: scroll;
-			}
+				font-family: "Montserrat", sans-serif;
+				overflow-x: auto;
+				scroll-snap-type: x mandatory;
+				scroll-behavior: smooth;
+				}
+				.table1 {
+				display: flex;
+				flex-direction: row;
+				font-family: "Montserrat", sans-serif;
+				align-items: center;
+				justify-content: center;
+				}
 
 			.jg1, .jg2 {
 				margin: 20px auto;
@@ -98,7 +109,7 @@
 			.menuu {
 				position: fixed;
 				top: 20px;
-				right: 20px;
+				right: 0px;
 				left: auto;
 				z-index: 9999;
 			}
@@ -262,7 +273,7 @@
 		transition: transform 0.5s ease;
 		cursor: pointer;
 		}
-		.table1 {
+		.table {
 		display: flex;
 		flex-direction: row;
 		font-family: "Montserrat", sans-serif;
