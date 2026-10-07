@@ -1,31 +1,51 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+	<link rel="stylesheet" href="Bibliotecas/CSS.css">
+		<link rel="stylesheet" href="Bibliotecas/menuFixo.css">	
 	</head>
 	<style>
-	body {
-	background-color: gray;
+	:root {
+	--bg-color: gray;
+	--tx-color1: black;
+	--tx-color2: white;
+	--pr-color: black;
+	--fn-color: lightgray;
 	}
+	body {
+	background-color: var(--bg-color);
+	}
+	
 	h1 {
-	color: black;
+	color: var(--tx-color1);
+	font-size: 30px;
+	}
+	
+	label {
+	color: var(--tx-color2);
 	font-size: 20px;
 	}
+	
 	input {
 	padding: 20px;
 	width: 55%;
 	height: 10%;
-	background-color: white;
-	color: black;
+	background-color: var(--tx-color2);
+	color: var(--tx-color1);
 	margin: 10px;
+	border-radius: 13px;
 	}
+	
 	button {
 	cursor: pointer;
+	margin-bottom: 10px;
 	}
+	
 	.card-jogo {
     width: 180px;
     height: 260px;
     background: #1e1e1e;
-    color: white;
+    color: var(--tx-color2);
     border: none;
     border-radius: 12px;
     padding: 10px;
@@ -39,41 +59,67 @@
 	text-align: center;
 	justify-content: center;
 	}	
+	
 	.linha-jogos {
 	display: flex;
 	flex-direction: row;
 	overflow-x: scroll;
 	}
+	
 	.nome-jogo {
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
-    color: white;
+    color: var(--tx-color2);
 	position: relative;
 	right: 15px;
 	font-size: 30px;
-}
-.jogo-container {
-justify-content: center;
-align-items: center;
-text-align: center;
-}
-.imagem-real {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-}
-button:hover {
-transform: scale(1.1);
-}
-.bar {
+	}
+	
+	.jogo-container {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	}
+	
+	.imagem-real {
+		width: 100%;
+		height: 100%;
+		border-radius: 8px;
+	}
+	
+	button:hover {
+	transform: scale(1.1);
+	}
+	
+	.bar {
 	font-family: "Fjalla One", sans-serif;
 	font-size: 3vw;
 	}
+	
+	.container {
+	position: relative;
+	top: 150px;
+	}
+	
+	.buttons {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	left: 800px;
+	bottom: 550px;
+	width: 200px;
+	margin-bottom: 10px;
+	}
+	
+	.panel {
+	position: relative;
+	bottom: 400px;
+	}
 	</style>
 	<body>
-	<h1 class="bar"><a style="color: var(--tx-color1);" href="biblioteca de jogos.html"><div class="bib">Biblioteca de Jogos</div></a></h1>
-	<h1> Adicionar/ Atualizar/ Remover Jogo da Biblioteca</h1>
+	<h1 class="bar"><a style="color: var(--tx-color1);" href="biblioteca de jogos.html"><div class="bib" >Biblioteca de Jogos</div></a></h1>
+	<h1 style="position: relative; left: 500px;top: 150px;"> Adicionar/ Atualizar/ Remover Jogo da Biblioteca</h1>
 	<div class="container">
 		<label for="nome">Digite o nome do jogo:</label>
 		<input type="text" id="nome" placeholder="Digite o nome"><br>
@@ -89,17 +135,17 @@ transform: scale(1.1);
 		<input type="text" id="lan" placeholder="Digite o ano de lancamento do jogo (opcional)"><br>
 		<label for="img">Selecione uma imagem para o jogo:</label>
 		<input type="text" id="img" placeholder="Digite o codigo da imagem"><br>
-		<select id="sel" style="padding: 30px; background-color: gray; color: black;">
+		<select id="sel" style="padding: 30px; background-color: black; color: var(--tx-color2);border-radius: 13px; cursor: pointer;">
 		</select>
-		<div style="margin-left: 700px;">
-			<button style="margin-left: 20px; background-color: green; padding: 20px; border-radius: 15px; border: 1px black solid;" id="add">Adicionar</button>
-			<button style="margin-left: 20px; background-color: blue; padding: 20px; border-radius: 15px; border: 1px black solid;" id="atu">Atualizar</button>
-			<button style="margin-left: 20px; background-color: red; padding: 20px; border-radius: 15px; border: 1px black solid;" id="exc" >Excluir</button>
-			<button style="margin-left: 20px; background-color: black;color: white; padding: 20px; border-radius: 15px; border: 1px black solid;" id="exi" >Exibir</button>
-			<button style="margin-left: 20px; background-color: red;color: white; padding: 20px; border-radius: 30px; border: 1px black solid;" id="limp" >Limpar lista</button>
-			<button style="margin-left: 20px; background-color: white;color: black; padding: 20px; border-radius: 30px; border: 1px black solid;" id="show" >Mostrar Cards</button>
+		<div class="buttons" style="margin-left: 700px;">
+			<button style="margin-left: 20px; background-color: green; padding: 20px; border-radius: 15px; border: 1px var(--tx-color1) solid;" id="add">Adicionar</button>
+			<button style="margin-left: 20px; background-color: blue; padding: 20px; border-radius: 15px; border: 1px var(--tx-color1) solid;" id="atu">Atualizar</button>
+			<button style="margin-left: 20px; background-color: red; padding: 20px; border-radius: 15px; border: 1px var(--tx-color1) solid;" id="exc" >Excluir</button>
+			<button style="margin-left: 20px; background-color: var(--tx-color1);color: var(--tx-color2); padding: 20px; border-radius: 15px; border: 1px var(--tx-color1) solid;" id="exi" >Exibir</button>
+			<button style="margin-left: 20px; background-color: red;color: var(--tx-color2); padding: 20px; border-radius: 30px; border: 1px var(--tx-color1) solid;" id="limp" >Limpar lista</button>
+			<button style="margin-left: 20px; background-color: var(--tx-color2);color: var(--tx-color1); padding: 20px; border-radius: 30px; border: 1px var(--tx-color1) solid;" id="show" >Mostrar Cards</button>
 		</div>
-		<p style="padding: 100px;color: black;" id="painel"></p>
+		<p class="panel" style="padding: 70px;color: var(--tx-color1);" id="painel"></p>
 	</div>
 	<script>		
 		let jogos = JSON.parse(localStorage.getItem("bibliotecaJogos")) || {};
