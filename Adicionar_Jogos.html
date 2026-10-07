@@ -111,38 +111,7 @@ transform: scale(1.1);
 		let mostrar = document.getElementById('show')
 		let painel = document.getElementById('painel')
 		// Criamos o objeto vazio
-		function carregarSelect() {
-    const jogos = JSON.parse(localStorage.getItem("jogos")) || {};
-    const select = document.getElementById("sel");
-
-    select.innerHTML = '<option value="">Selecione um jogo</option>';
-
-    for (let [nome, dados] of Object.entries(jogos)) {
-        const option = document.createElement("option");
-        option.value = nome;        // chave do objeto
-        option.textContent = nome;  // nome do jogo
-        select.appendChild(option);
-    }
-}
-
-carregarSelect();
-
-		document.getElementById("sel").addEventListener("change", function() {
-    const nomeSelecionado = this.value;
-    const jogos = JSON.parse(localStorage.getItem("jogos")) || {};
-
-    const dados = jogos[nomeSelecionado]; // pega o objeto pela chave
-
-    if (dados) {
-        document.getElementById("nome").value = nomeSelecionado;
-        document.getElementById("img").value = dados.codigo;
-        document.getElementById("genero").value = dados.genero;
-        document.getElementById("temp").value = dados.tempo;
-        document.getElementById("lan").value = dados.lancamento;
-        document.getElementById("not").value = dados.nota;
-        document.getElementById("dev").value = dados.desenvolvedora;
-    }
-});
+		
 
 
 		function mostrarJogosBonito() {
@@ -287,6 +256,40 @@ carregarSelect();
     location.reload(); 
 });
 	mostrar.addEventListener('click', () => location.reload());
+function carregarSelect() {
+    const jogos = JSON.parse(localStorage.getItem("bibliotecaJogos")) || {}; // <-- aqui
+    const select = document.getElementById("sel");
+
+    select.innerHTML = '<option value="">Selecione um jogo</option>';
+
+    for (let [nome, dados] of Object.entries(jogos)) {
+        const option = document.createElement("option");
+        option.value = nome;
+        option.textContent = nome;
+        select.appendChild(option);
+    }
+}
+
+console.log(localStorage.getItem("bibliotecaJogos")); // <-- aqui
+
+carregarSelect();
+
+document.getElementById("sel").addEventListener("change", function() {
+    const nomeSelecionado = this.value;
+    const jogos = JSON.parse(localStorage.getItem("bibliotecaJogos")) || {}; // <-- aqui
+
+    const dados = jogos[nomeSelecionado];
+
+    if (dados) {
+        document.getElementById("nome").value = nomeSelecionado;
+        document.getElementById("img").value = dados.codigo;
+        document.getElementById("genero").value = dados.genero;
+        document.getElementById("temp").value = dados.tempo;
+        document.getElementById("lan").value = dados.lancamento;
+        document.getElementById("not").value = dados.nota;
+        document.getElementById("dev").value = dados.desenvolvedora;
+    }
+});
 
 
 
