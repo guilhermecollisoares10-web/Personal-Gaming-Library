@@ -110,7 +110,7 @@
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	left: 800px;
+	left: 1000px;
 	bottom: 550px;
 	width: 200px;
 	margin-bottom: 10px;
@@ -126,6 +126,7 @@
 	   width: 100px;
 	}
 	}
+	@media(min-width:981px) {
 	:root {
 	--bg-color: gray;
 	--tx-color1: black;
@@ -234,6 +235,7 @@
 	bottom: 550px;
 	width: 200px;
 	margin-bottom: 10px;
+	margin-left: 700px;
 	}
 	
 	.panel {
@@ -244,6 +246,7 @@
 	.cards {
 	  border-radius: 40%;
 	   width: 100px;
+	}
 	}
 	</style>
 	<body>
@@ -266,7 +269,7 @@
 		<input type="text" id="img" placeholder="Digite o codigo da imagem"><br>
 		<select id="sel" style="padding: 30px; background-color: black; color: var(--tx-color2);border-radius: 13px; cursor: pointer;">
 		</select>
-		<div class="buttons" style="margin-left: 700px;">
+		<div class="buttons" >
 			<button class="cards" style="margin-left: 20px; background-color: #58ce74; padding: 20px; border: 1px var(--tx-color1) solid;" id="add">Adicionar</button>
 			<button class="cards" style="margin-left: 20px; background-color: #05d3f8; padding: 20px; border: 1px var(--tx-color1) solid;" id="atu">Atualizar</button>
 			<button class="cards" style="margin-left: 20px; background-color: #8c162a; padding: 20px; border: 1px var(--tx-color1) solid;" id="exc" >Excluir</button>
