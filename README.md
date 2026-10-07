@@ -8,7 +8,6 @@ Personal Gaming Library é uma aplicação web desenvolvida para organizar, visu
 - Biblioteca completa de jogos adicionados pelo usuário.
 - Formulário para cadastro de novos jogos.
 - Página dedicada para estatísticas de desempenho.
-- Exibição das configurações do computador.
 - Modo claro e escuro.
 - Armazenamento dos dados utilizando LocalStorage.
 - Navegação por páginas independentes.
