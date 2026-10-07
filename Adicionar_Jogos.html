@@ -2,28 +2,31 @@
 <html>
 	<head>
 	<link rel="stylesheet" href="Bibliotecas/CSS.css">
-		<link rel="stylesheet" href="Bibliotecas/menuFixo.css">	
+	<link rel="stylesheet" href="Bibliotecas/menuFixo.css">	
 	</head>
 	<style>
 	@media(max-width:980px) {
 		:root {
-	--bg-color: gray;
-	--tx-color1: black;
-	--tx-color2: white;
-	--pr-color: black;
-	--fn-color: lightgray;
-	}
+		--bg-color: #0f141a;
+		--tx-color1: white;
+		--fn-color: #314c53;
+		--tx-color4: black;
+		--cb-color: #121212;
+		transition: background-color 0.3s, color 0.3s;
+		}
 	body {
 	background-color: var(--bg-color);
 	}
-	
+	p {
+	color: var(--tx-color1);
+	}
 	h1 {
 	color: var(--tx-color1);
 	font-size: 30px;
 	}
 	
 	label {
-	color: var(--tx-color2);
+	color: var(--tx-color1);
 	font-size: 20px;
 	}
 	
@@ -31,7 +34,7 @@
 	padding: 20px;
 	width: 55%;
 	height: 10%;
-	background-color: var(--tx-color2);
+	background-color: var(--tx-color1);
 	color: var(--tx-color1);
 	margin: 10px;
 	border-radius: 13px;
@@ -128,12 +131,13 @@
 	}
 	@media(min-width:981px) {
 	:root {
-	--bg-color: gray;
-	--tx-color1: black;
-	--tx-color2: white;
-	--pr-color: black;
-	--fn-color: lightgray;
-	}
+		--bg-color: #0f141a;
+		--tx-color1: white;
+		--fn-color: #314c53;
+		--tx-color4: black;
+		--cb-color: #121212;
+		transition: background-color 0.3s, color 0.3s;
+		}
 	body {
 	background-color: var(--bg-color);
 	}
@@ -142,9 +146,11 @@
 	color: var(--tx-color1);
 	font-size: 30px;
 	}
-	
+	p {
+	color: white;
+	}
 	label {
-	color: var(--tx-color2);
+	color: var(--tx-color1);
 	font-size: 20px;
 	}
 	
@@ -152,7 +158,7 @@
 	padding: 20px;
 	width: 55%;
 	height: 10%;
-	background-color: var(--tx-color2);
+	background-color: #f2e7d2;
 	color: var(--tx-color1);
 	margin: 10px;
 	border-radius: 13px;
@@ -251,31 +257,31 @@
 	</style>
 	<body>
 	<h1 class="bar"><a style="color: var(--tx-color1);" href="biblioteca de jogos.html"><div class="bib" >Biblioteca de Jogos</div></a></h1>
-	<h1 style="position: relative; left: 500px;top: 150px;"> Adicionar/ Atualizar/ Remover Jogo da Biblioteca</h1>
+	<h1 style="position: relative; left: 500px;top: 150px;"> Adicionar/ Atualizar/ Remover Jogo da Biblioteca</h1>	
 	<div class="container">
+	<p>Não é necessário que todas as informações sejam preenchidas para adicionar um jogo, é possivel apenas colocar aquilo que voce deseja e, se preciso, é possivel adicionar depois</p>
 		<label for="nome">Digite o nome do jogo:</label>
 		<input type="text" id="nome" placeholder="Digite o nome"><br>
 		<label for="genero">Digite o genero do jogo:</label>
 		<input type="text" id="genero" placeholder="Digite o genero"><br>
-		<label for="dev">Digite o dev do jogo:</label>
-		<input type="text" id="dev" placeholder="Digite a desenvolvedora(opcional)"><br>
 		<label for="not">Digite a nota para o jogo:</label>
-		<input type="text" id="not" placeholder="Digite a nota(opcional)"><br>
+		<input type="text" id="not" placeholder="Digite a nota"><br>
+		<label for="dev">Digite o dev do jogo:</label>
+		<input type="text" id="dev" placeholder="Digite a desenvolvedora"><br>		
 		<label for="temp">Digite o tempo jogado:</label>
-		<input type="text" id="temp" placeholder="Digite o tempo(opcional)"><br>
+		<input type="text" id="temp" placeholder="Digite o tempo"><br>
 		<label for="lan">Digite o ano em que o jogo foi lançado:</label>
-		<input type="text" id="lan" placeholder="Digite o ano de lancamento do jogo (opcional)"><br>
+		<input type="text" id="lan" placeholder="Digite o ano de lancamento do jogo"><br>
 		<label for="img">Selecione uma imagem para o jogo:</label>
 		<input type="text" id="img" placeholder="Digite o codigo da imagem"><br>
-		<select id="sel" style="padding: 30px; background-color: black; color: var(--tx-color2);border-radius: 13px; cursor: pointer;">
+		<select id="sel" style="padding: 30px; background-color: black; color: var(--tx-color1);border-radius: 13px; cursor: pointer;">
 		</select>
 		<div class="buttons" >
-			<button class="cards" style="margin-left: 20px; background-color: #58ce74; padding: 20px; border: 1px var(--tx-color1) solid;" id="add">Adicionar</button>
-			<button class="cards" style="margin-left: 20px; background-color: #05d3f8; padding: 20px; border: 1px var(--tx-color1) solid;" id="atu">Atualizar</button>
-			<button class="cards" style="margin-left: 20px; background-color: #8c162a; padding: 20px; border: 1px var(--tx-color1) solid;" id="exc" >Excluir</button>
-			<button class="cards" style="margin-left: 20px; background-color: var(--tx-color1);color: var(--tx-color2); padding: 20px; border: 1px var(--tx-color1) solid;" id="exi" >Exibir</button>
-			<button class="cards" style="margin-left: 20px; background-color: #660022;color: var(--tx-color2); padding: 20px; border: 1px var(--tx-color1) solid;" id="limp" >Limpar lista</button>
-			<button class="cards" style="margin-left: 20px; background-color: var(--tx-color2);color: var(--tx-color1); padding: 20px; border: 1px var(--tx-color1) solid;" id="show" >Mostrar Cards</button>
+			<button class="cards" style="margin-left: 20px; background-color: #314c53;width: 150px; padding: 20px; border: 4px var(--tx-color1) solid;" id="add">Adicionar/atualizar</button>
+			<button class="cards" style="margin-left: 20px; background-color: #314c53; padding: 20px; border: 4px var(--tx-color1) solid;" id="exc" >Excluir</button>
+			<button class="cards" style="margin-left: 20px; background-color: #314c53;color: var(--tx-color2); padding: 20px; border: 4px var(--tx-color1) solid;" id="exi" >Exibir</button>
+			<button class="cards" style="margin-left: 20px; background-color: #314c53;color: var(--tx-color2); padding: 20px; border: 4px var(--tx-color1) solid;" id="limp" >Limpar lista</button>
+			<button class="cards" style="margin-left: 20px; background-color: #314c53;color: var(--tx-color2); padding: 20px; border: 4px var(--tx-color1) solid;" id="show" >Mostrar Cards</button>
 		</div>
 		<p class="panel" style="padding: 70px;color: var(--tx-color1);" id="painel"></p>
 	</div>
@@ -286,8 +292,10 @@
 		let excluir = document.getElementById('exc')
 		let exibir = document.getElementById('exi')
 		let limpar = document.getElementById('limp')
+		let salvar = document.getElementById('sal')
 		let mostrar = document.getElementById('show')
 		let painel = document.getElementById('painel')
+		let situação_atual = 'nulo'
 		// Criamos o objeto vazio
 		
 
@@ -342,24 +350,6 @@
 			localStorage.setItem("bibliotecaJogos", JSON.stringify(jogos));
 		}
 		
-		function atualizarJogo(nome, genero, desenvolvedora, codigo, tempo, data, nota) {
-		if (jogos[nome]) {
-			console.log('Atualizando informações')
-			jogos[nome] = {
-			genero: genero,
-			desenvolvedora: desenvolvedora,
-			nota: nota,
-			tempo: tempo,
-			lancamento: data,
-			codigo: codigo
-			};
-			localStorage.setItem("bibliotecaJogos", JSON.stringify(jogos));
-
-		}
-		else {
-			console.log('Jogo nçao encontrado, deseja adiciona-lo?')
-		}
-		}
 		
 		function excluirJogos(nome) {
 		if (jogos[nome]) {
@@ -372,44 +362,64 @@
 			console.log('Jogo não encontrado, deseja adiciona-lo?')
 		}
 		}
+		
+		function pegarValores() {
+		let JogoAtual = document.getElementById('nome').value;
+		let Genero = document.getElementById('genero').value;
+		let Dev = document.getElementById('dev').value;
+		let Not = document.getElementById('not').value;
+		let Tempo = document.getElementById('temp').value;
+		let Lan = document.getElementById('lan').value;
+		let Img = document.getElementById('img').value;
+		let valoresBrutos = {
+		jogo: JogoAtual,
+		genero: Genero,
+		desenvolvedora: Dev,
+		nota: Not,
+		tempo: Tempo,
+		lançamento: Lan,
+		img: Img
+		}
+		let valores = {}
+		let listateste = [JogoAtual, Genero, Dev, Img, Tempo, Lan, Not];
+		for (let [item, valor] of Object.entries(valoresBrutos)) {
+			if (valor !== ''){
+			valores[item] = "Preenchido"
+			}
+			else {
+			valores[item] = "Vazio"
+			}
+		}
+		return {
+			valores,
+			listateste
+		}
+		}
+		
 		adicionar.addEventListener('click', function() {
 		let JogoAtual = document.getElementById('nome').value;
-		let Genero = document.getElementById('genero').value;
-		let Dev = document.getElementById('dev').value;
-		let Not = document.getElementById('not').value;
-		let Tempo = document.getElementById('temp').value;
-		let Lan = document.getElementById('lan').value;
-		let Img = document.getElementById('img').value;
-		if (JogoAtual !== '' && Genero !== '' && Dev !== '' && Img !== '') {
-			adicionarJogo(JogoAtual, Genero, Dev, Img, Tempo, Lan,Not );
-			console.log(jogos);
-			painel.textContent = `Jogo '${JogoAtual}' adicionado com sucesso!`
-			cleanInput()
+		let resultado = pegarValores();   
+		let valores = resultado.valores;  
+		console.log(valores)
+		let lista = resultado.listateste; 
+		let preenchidos = []
+		let faltantes = []
+		for (let [campo, valor] of Object.entries(valores)) {
+			if (valor == "Preenchido") {
+				preenchidos.push(campo);
+			} 
+			else {
+				faltantes.push(campo);
+			}
 		}
-		else {
-		console.log('Operacao invalida, digite algo valido')
-		}
+
+		console.log(preenchidos)
+		console.log(faltantes)
+		adicionarJogo(...lista)
+		painel.innerHTML = `Informações para ${JogoAtual} Adicionadas <br> Informações faltantes para ${JogoAtual}: ${faltantes.join(", ")}`;
+		cleanInput()
 		});
-		
-		atualizar.addEventListener('click', function() {
-		let JogoAtual = document.getElementById('nome').value;
-		let Genero = document.getElementById('genero').value;
-		let Dev = document.getElementById('dev').value;
-		let Not = document.getElementById('not').value;
-		let Tempo = document.getElementById('temp').value;
-		let Lan = document.getElementById('lan').value;
-		let Img = document.getElementById('img').value;
-		if (JogoAtual !== '' && Genero !== '' && Img !== '') {
-			atualizarJogo(JogoAtual, Genero, Dev, Img, Tempo, Lan,Not );
-			console.log('Jogo atualizado com sucesso!')
-			console.log(jogos);
-			painel.textContent = `Jogo '${JogoAtual}' atualizado com sucesso!`
-			cleanInput()
-		}
-		else {
-			painel.textContent = `digite as informações necessarias`
-		}
-		});
+
 		
 		excluir.addEventListener('click', function() {
 		let JogoAtual = document.getElementById('nome').value;
