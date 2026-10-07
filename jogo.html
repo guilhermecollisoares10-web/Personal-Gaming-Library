@@ -3,8 +3,8 @@
 	<head>
 		<title id="pageTitle"></title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-		<link rel="stylesheet" href="CSS.css">
-		<link rel="stylesheet" href="menuFixo.css">
+		<link rel="stylesheet" href="Bibliotecas/CSS.css">
+		<link rel="stylesheet" href="Bibliotecas/menuFixo.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 	
 	<style>
@@ -233,23 +233,21 @@
 			document.addEventListener("DOMContentLoaded", function () {
 				
 
-				// Pegar nome do jogo pela URL
+
 				const params = new URLSearchParams(window.location.search);
 				const nome = params.get("nome");
 				document.title = nome;
-				// Buscar dados no localStorage
+
 				const jogos = JSON.parse(localStorage.getItem("bibliotecaJogos"));
 				const dados = jogos[nome];
-
-				// Preencher página
+				
 				document.getElementById("titulo").textContent = nome;
-				document.getElementById("imagem").src = dados.codigo;
-				document.getElementById("genero").textContent = dados.genero;
-				document.getElementById("dev").textContent = dados.desenvolvedora;
+				document.getElementById("imagem").src = dados.codigo || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNhuyNpRU9riK92IQ7LWQm9MRCKm-yVWzK7UTLlcZf-w&s=10";
+				document.getElementById("genero").textContent = dados.genero || "Não informado";
+				document.getElementById("dev").textContent = dados.desenvolvedora || "Não informado";
 
-				// Campos extras (caso existam)
 				document.getElementById("not").textContent = dados.nota || "Sem nota";
-				document.getElementById("temp").textContent = `${dados.tempo} horas` || "Não informado";
+				document.getElementById("temp").textContent = `${dados.tempo} horas` || "Tempo não registrado";
 				document.getElementById("lan").textContent = dados.lancamento || "Não informado";
 
 
