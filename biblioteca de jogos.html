@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>Biblioteca</title>
-		<link rel="stylesheet" href="CSS.css">
-		<link rel="stylesheet" href="menuFixo.css">	
+		<link rel="stylesheet" href="Bibliotecas/CSS.css">
+		<link rel="stylesheet" href="Bibliotecas/menuFixo.css">	
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
 
@@ -11,74 +11,33 @@
 		<style>
 		@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-				@media (max-width: 980px) {
-			:root {
-			--bg-color: #0f141a;
-			--tx-color1: white;
-			--fn-color: #314c53;
-			--tx-color4: black;
-			--cb-color: #121212;
-			transition: background-color 0.3s, color 0.3s;
-			}
-			.light-mode {
-			--bg-color: #fdf2c5;
-			--tx-color1: #000000;
-			--tx-color4: #000000;
-			--cb-color: #e7edea;
-			--fn-color: #ffffff;
-			transition: background-color 0.3s, color 0.3s;
-			}
-			.dark-mode {
-			--bg-color: #0f141a;
-			--tx-color1: white;
-			--tx-color4: black;
-			--cb-color: #121212;
-			--fn-color: #314c53;
-			transition: background-color 0.3s, color 0.3s;
-			}
-
-		.jg1 {
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-		justify-content: center;
-		align-items: center;
-		margin-right: 0.5vw;
-		margin-left: 2vw;
-		scroll-snap-align: start;
-		}
-		.nm1 {
-		border: 1px solid black;
-		border-radius: 13px;
-		width: 11vw;
-		margin-bottom: 20px;
-		background-color: var(--cb-color);
-		padding: 10px;
-		font-size: 20px;
-		color: var(--tx-color1);
-		}
-		.nm2 {
-		border: 1px solid black;
-		border-radius: 13px;
-		width: 15vw;
-		margin-bottom: 20px;
-		background-color: var(--cb-color);
-		padding: 10px;
-		font-size: 20px;
-		color: var(--tx-color1);
-		}
-		.jg2 {
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-		justify-content: center;
-		align-items: center;
-		margin-right: 1vw;
-		margin-left: 1vw;
-		position: relative;
-		bottom: 0.8vw;
-		}
+		@media (max-width: 980px) {
 			
+			:root {
+		--bg-color: #0f141a;
+		--tx-color1: white;
+		--fn-color: #314c53;
+		--tx-color4: black;
+		--cb-color: #121212;
+		transition: background-color 0.3s, color 0.3s;
+		}
+		.light-mode {
+		--bg-color: #fdf2c5;
+		--tx-color1: #000000;
+		--tx-color4: #000000;
+		--cb-color: #e7edea;
+		--fn-color: #ffffff;
+		transition: background-color 0.3s, color 0.3s;
+		}
+		.dark-mode {
+		--bg-color: #0f141a;
+		--tx-color1: white;
+		--tx-color4: black;
+		--cb-color: #121212;
+		--fn-color: #314c53;
+		transition: background-color 0.3s, color 0.3s;
+		}
+		
 			body {
 				background-color: var(--bg-color);
 				margin: 0;
@@ -88,16 +47,19 @@
 
 			h1 {
 				font-size: 28px;
+				color: (--tx-color1);
 				text-align: center;
-				color: var(--tx-color1);
 			}
 
 			h2 {
 				font-size: 22px;
-				text-align: center;
 				color: var(--tx-color1);
+				text-align: center;
 			}
-
+			
+			p {
+			color: var(--tx-color1);
+			}
 			.mai {
 				font-size: 22px;
 				text-align: center;
@@ -109,6 +71,7 @@
 				padding: 15px;
 				font-size: 18px;
 				box-shadow: none;
+				color: var(--tx-color1);
 			}
 
 			.gpu, .cpu, .plm {
@@ -117,22 +80,23 @@
 				margin-bottom: 10px;
 			}
 
-			 .table {
-				display: flex;
+			.table {
 				flex-direction: row;
-				font-family: "Montserrat", sans-serif;
-				overflow-x: auto;
-				scroll-snap-type: x mandatory;
-				scroll-behavior: smooth;
-				}
-				.table1 {
-				display: flex;
-				flex-direction: row;
-				font-family: "Montserrat", sans-serif;
-				align-items: center;
-				justify-content: center;
-				margin-right: 20px;
-				}
+				overflow-x: scroll;
+			}
+
+			.jg1, .jg2 {
+				margin: 20px auto;
+				width: 90%;
+				color: var(--tx-color1);
+			}
+
+			.nm1, .nm2 {
+				width: 90%;
+				font-size: 18px;
+				margin-bottom: 15px;
+				color: var(--tx-color1);
+			}
 
 			img {
 				width: 90%;
@@ -141,10 +105,9 @@
 			}
 
 			.menuu {
-				position: fixed;
+				position: relative;
 				top: 20px;
-				right: -20px;
-				left: auto;
+				right: 0px;
 				z-index: 9999;
 			}
 
@@ -172,13 +135,8 @@
 				padding: 10px;
 				margin-top: 15px;
 			}
-
-			.teste {
-				position: fixed;
-				right: 400px;
-			}
 		}
-			
+
 		@media (min-width:981px){
 
 
@@ -213,7 +171,6 @@
 		h1 {
 		font-family: "Montserrat", sans-serif;
 		font-size:3vw;
-		color: var(--tx-color1);
 		}
 		h2 {
 		font-size: 2vw;
@@ -448,12 +405,10 @@
 		</style>
 	<body id="body">
 		<div class="menu">
-		<div class="teste">
 		<!--<div class="zrd"><a style="font-size: 1vw;" href="file:///C:/Users/Usuario/Desktop/testes/BibliotecaPessoal/zerados.html"><button class="btnz">Jogos Zerados</button></a></div>-->
 		<div class="abn"><a style="font-size: 1vw;" href="Adicionar_Jogos.html"><button class="btna">Adicionar Jogos</button></a></div>
 		<h1 class="bar"><div class="bib">Biblioteca de Jogos</div></h1>	
 		<div class="est"><a style="font-size: 1vw;" href="Estatísticas.html"><button class="btne">Estatísticas de Desepenho</button></a></div>
-		</div>
 							<div class="menuu">
 							<button id="btnc" class="btnm"> Configurações <br><i class="material-symbols-outlined">settings</i></button>
 								<div id="cont" class="mencont">
@@ -467,7 +422,7 @@
 			<p><h2 style="text-align: center;">Biblioteca completa de jogos <i>instalados</i>:</h2></p>
 		
 			<div class="table">
-				<div class="table1" id="painel"></div>			
+				<div class="table" id="painel"></div>			
 			</div>
 			<!--<p><h2 class="mai"style="color: var(--tx-color1);" >Mais:</h2></p>-->
 			<!--<ul>
@@ -476,14 +431,14 @@
 			<li><a style="font-size: 1vw;" href="file:///C:/Users/Usuario/Desktop/testes/BibliotecaPessoal/Estat%C3%ADsticas.html"><button class="btn">Estatísticas de Desepenho</button></a></li></p></li>
 			<li><a style="font-size: 25px;" href="file:///C:/Users/Usuario/Desktop/testes/2teste/Jogando.html">Jogando Agora</a></li>
 			</ul>-->
-			<div class="cfg">
+			<!--<div class="cfg">
 				<h2 style="color: var(--tx-color1)">Configuração do Computador</h2><br>
 				<ul>
 					<div class="gpu"><li style="color: #9f111b;">Placa De Vídeo: AMD Radeon RX6600</li></div>
 					<div class="cpu"><p><li style="color: #bd3737;">Processador: AMD ryzen 7 5700G</li></p></div>
 					<div class="plm"><li style="color: #b11623;">Placa-Mãe: ASUS TUF Gaming A520M-PLUS||</li><br></div>
 				</ul>
-			</div>
+			</div>-->
 			<p class="bibl">Biblioteca de Jogos, 2026</p>
 			</div>
 		</div>
