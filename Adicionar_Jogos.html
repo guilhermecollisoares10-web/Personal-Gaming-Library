@@ -5,7 +5,8 @@
 		<link rel="stylesheet" href="Bibliotecas/menuFixo.css">	
 	</head>
 	<style>
-	:root {
+	@media(max-width:980px) {
+		:root {
 	--bg-color: gray;
 	--tx-color1: black;
 	--tx-color2: white;
@@ -39,6 +40,7 @@
 	button {
 	cursor: pointer;
 	margin-bottom: 10px;
+	transition: transform 0.5s ease, border-radius 0.5s ease;
 	}
 	
 	.card-jogo {
@@ -89,7 +91,9 @@
 	}
 	
 	button:hover {
-	transform: scale(1.1);
+	transform: scale(1.2);
+	border-radius: 15px;
+
 	}
 	
 	.bar {
@@ -116,6 +120,131 @@
 	position: relative;
 	bottom: 400px;
 	}
+	
+	.cards {
+	  border-radius: 40%;
+	   width: 100px;
+	}
+	}
+	:root {
+	--bg-color: gray;
+	--tx-color1: black;
+	--tx-color2: white;
+	--pr-color: black;
+	--fn-color: lightgray;
+	}
+	body {
+	background-color: var(--bg-color);
+	}
+	
+	h1 {
+	color: var(--tx-color1);
+	font-size: 30px;
+	}
+	
+	label {
+	color: var(--tx-color2);
+	font-size: 20px;
+	}
+	
+	input {
+	padding: 20px;
+	width: 55%;
+	height: 10%;
+	background-color: var(--tx-color2);
+	color: var(--tx-color1);
+	margin: 10px;
+	border-radius: 13px;
+	}
+	
+	button {
+	cursor: pointer;
+	margin-bottom: 10px;
+	transition: transform 0.5s ease, border-radius 0.5s ease;
+	}
+	
+	.card-jogo {
+    width: 180px;
+    height: 260px;
+    background: #1e1e1e;
+    color: var(--tx-color2);
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.2s;
+	margin-right: 30px;
+	text-align: center;
+	justify-content: center;
+	}	
+	
+	.linha-jogos {
+	display: flex;
+	flex-direction: row;
+	overflow-x: scroll;
+	}
+	
+	.nome-jogo {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--tx-color2);
+	position: relative;
+	right: 15px;
+	font-size: 30px;
+	}
+	
+	.jogo-container {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	}
+	
+	.imagem-real {
+		width: 100%;
+		height: 100%;
+		border-radius: 8px;
+	}
+	
+	button:hover {
+	transform: scale(1.2);
+	border-radius: 15px;
+
+	}
+	
+	.bar {
+	font-family: "Fjalla One", sans-serif;
+	font-size: 3vw;
+	}
+	
+	.container {
+	position: relative;
+	top: 150px;
+	}
+	
+	.buttons {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	left: 800px;
+	bottom: 550px;
+	width: 200px;
+	margin-bottom: 10px;
+	}
+	
+	.panel {
+	position: relative;
+	bottom: 400px;
+	}
+	
+	.cards {
+	  border-radius: 40%;
+	   width: 100px;
+	}
 	</style>
 	<body>
 	<h1 class="bar"><a style="color: var(--tx-color1);" href="biblioteca de jogos.html"><div class="bib" >Biblioteca de Jogos</div></a></h1>
@@ -138,12 +267,12 @@
 		<select id="sel" style="padding: 30px; background-color: black; color: var(--tx-color2);border-radius: 13px; cursor: pointer;">
 		</select>
 		<div class="buttons" style="margin-left: 700px;">
-			<button style="margin-left: 20px; background-color: green; padding: 20px; border-radius: 15px; border: 1px var(--tx-color1) solid;" id="add">Adicionar</button>
-			<button style="margin-left: 20px; background-color: blue; padding: 20px; border-radius: 15px; border: 1px var(--tx-color1) solid;" id="atu">Atualizar</button>
-			<button style="margin-left: 20px; background-color: red; padding: 20px; border-radius: 15px; border: 1px var(--tx-color1) solid;" id="exc" >Excluir</button>
-			<button style="margin-left: 20px; background-color: var(--tx-color1);color: var(--tx-color2); padding: 20px; border-radius: 15px; border: 1px var(--tx-color1) solid;" id="exi" >Exibir</button>
-			<button style="margin-left: 20px; background-color: red;color: var(--tx-color2); padding: 20px; border-radius: 30px; border: 1px var(--tx-color1) solid;" id="limp" >Limpar lista</button>
-			<button style="margin-left: 20px; background-color: var(--tx-color2);color: var(--tx-color1); padding: 20px; border-radius: 30px; border: 1px var(--tx-color1) solid;" id="show" >Mostrar Cards</button>
+			<button class="cards" style="margin-left: 20px; background-color: #58ce74; padding: 20px; border: 1px var(--tx-color1) solid;" id="add">Adicionar</button>
+			<button class="cards" style="margin-left: 20px; background-color: #05d3f8; padding: 20px; border: 1px var(--tx-color1) solid;" id="atu">Atualizar</button>
+			<button class="cards" style="margin-left: 20px; background-color: #8c162a; padding: 20px; border: 1px var(--tx-color1) solid;" id="exc" >Excluir</button>
+			<button class="cards" style="margin-left: 20px; background-color: var(--tx-color1);color: var(--tx-color2); padding: 20px; border: 1px var(--tx-color1) solid;" id="exi" >Exibir</button>
+			<button class="cards" style="margin-left: 20px; background-color: #660022;color: var(--tx-color2); padding: 20px; border: 1px var(--tx-color1) solid;" id="limp" >Limpar lista</button>
+			<button class="cards" style="margin-left: 20px; background-color: var(--tx-color2);color: var(--tx-color1); padding: 20px; border: 1px var(--tx-color1) solid;" id="show" >Mostrar Cards</button>
 		</div>
 		<p class="panel" style="padding: 70px;color: var(--tx-color1);" id="painel"></p>
 	</div>
@@ -249,7 +378,7 @@
 		let Lan = document.getElementById('lan').value;
 		let Img = document.getElementById('img').value;
 		if (JogoAtual !== '' && Genero !== '' && Dev !== '' && Img !== '') {
-			adicionarJogo(JogoAtual, Genero, Dev, Img, Not, Tempo, Lan);
+			adicionarJogo(JogoAtual, Genero, Dev, Img, Tempo, Lan,Not );
 			console.log(jogos);
 			painel.textContent = `Jogo '${JogoAtual}' adicionado com sucesso!`
 			cleanInput()
@@ -268,7 +397,7 @@
 		let Lan = document.getElementById('lan').value;
 		let Img = document.getElementById('img').value;
 		if (JogoAtual !== '' && Genero !== '' && Img !== '') {
-			atualizarJogo(JogoAtual, Genero, Dev, Img, Not, Tempo, Lan);
+			atualizarJogo(JogoAtual, Genero, Dev, Img, Tempo, Lan,Not );
 			console.log('Jogo atualizado com sucesso!')
 			console.log(jogos);
 			painel.textContent = `Jogo '${JogoAtual}' atualizado com sucesso!`
@@ -306,7 +435,7 @@ function carregarSelect() {
     const jogos = JSON.parse(localStorage.getItem("bibliotecaJogos")) || {}; // <-- aqui
     const select = document.getElementById("sel");
 
-    select.innerHTML = '<option value="">Selecione um jogo</option>';
+    select.innerHTML = '<option value="">Preencher automaticamente</option>';
 
     for (let [nome, dados] of Object.entries(jogos)) {
         const option = document.createElement("option");
