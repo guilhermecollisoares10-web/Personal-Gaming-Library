@@ -60,4 +60,4 @@ Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` p
 
 ## Autor
 
-Desenvolvido por Eduardo Colli Soares.
+Desenvolvido por Guilherme Colli Soares.
