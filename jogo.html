@@ -2,8 +2,9 @@
 <html>
 	<head>
 		<title id="pageTitle"></title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 		<link rel="stylesheet" href="CSS.css">
-		<link rel="stylesheet" href="menuFixo.css">	
+		<link rel="stylesheet" href="menuFixo.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 	
 	<style>
@@ -208,6 +209,7 @@
 					<li>Nota: <span id="not"></span></li>
 					<li>Desenvolvedora: <span id="dev"></span></li>
 					<li>Lançamento: <span id="lan"></span></li>
+					<li>Status: <span id="sta"></span></li>
 
 						<ul>
 							<li><a style="font-size: 1vw;" href="Estatísticas.html">Estatísticas de Desepenho</a></li></p></li>
@@ -248,8 +250,9 @@
 				document.getElementById("not").textContent = dados.nota || "Sem nota";
 				document.getElementById("temp").textContent = `${dados.tempo} horas` || "Tempo não registrado";
 				document.getElementById("lan").textContent = dados.lancamento || "Não informado";
+				document.getElementById("sta").textContent = dados.status || "Não informado";
 
-
+				console.log(jogos[nome]);
 				
 				const body = document.body;
 				const btnd = document.getElementById('btndk');
