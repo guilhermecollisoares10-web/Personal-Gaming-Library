@@ -2,9 +2,10 @@
 <html>
 	<head>
 		<title>Biblioteca</title>
-		<link rel="stylesheet" href="CSS.css">
-		<link rel="stylesheet" href="menuFixo.css">	
+		<link rel="stylesheet" href="Bibliotecas/CSS.css">
+		<link rel="stylesheet" href="Bibliotecas/menuFixo.css">	
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+		<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
 
 
 	</head>
@@ -47,7 +48,7 @@
 
 			h1 {
 				font-size: 28px;
-				color: (--tx-color1);
+				color: var(--tx-color1);
 				text-align: center;
 			}
 
@@ -100,12 +101,24 @@
 			}
 
 			.nm1, .nm2 {
-				width: 90%;
-				font-size: 18px;
-				margin-bottom: 15px;
+				border: 1px solid black;
+				border-radius: 13px;
+				width: 10vw;
+				margin-bottom: 20px;
+				background-color: var(--cb-color);
+				padding: 10px;
+				font-size: 20px;
 				color: var(--tx-color1);
 			}
-
+			
+					.sel {
+		background-color: var(--bg-color);
+		border: var(--bg-color) 1px solid;
+		color: white;
+		padding: 20px;
+		font-size: 2vw;
+		font-family: "Italianno", cursive;
+		}
 			img {
 				width: 90%;
 				height: auto;
@@ -409,6 +422,18 @@
 		margin-top: 10px;
 
 		}
+		
+		.sel {
+		background-color: #121920;
+		border-radius: 15px;
+		cursor: pointer;
+		border: #5b5d61 3px solid;
+		color: white;
+		padding: 15px;
+		font-size: 2vw;
+	    font-family: "Italiana", sans-serif;
+		}
+		
 		}
 		</style>
 	<body id="body">
@@ -416,7 +441,7 @@
 		<!--<div class="zrd"><a style="font-size: 1vw;" href="file:///C:/Users/Usuario/Desktop/testes/BibliotecaPessoal/zerados.html"><button class="btnz">Jogos Zerados</button></a></div>-->
 		<div class="abn"><a style="font-size: 1vw;" href="Adicionar_Jogos.html"><button class="btna">Adicionar Jogos</button></a></div>
 		<h1 class="bar"><div class="bib">Biblioteca de Jogos</div></h1>	
-		<div class="est"><a style="font-size: 1vw;" href="Estatísticas.html"><button class="btne">Estatísticas de Desepenho</button></a></div>
+		<div class="est"><a style="font-size: 1vw;" href="Estatísticas.html"><button class="btne">Estatísticas</button></a></div>
 							<div class="menuu">
 							<button id="btnc" class="btnm"> Configurações <br><i class="material-symbols-outlined">settings</i></button>
 								<div id="cont" class="mencont">
@@ -427,7 +452,7 @@
 		</div>	
 		<div class="men" onclick="close()">
 			
-			<p><h2 style="text-align: center;">Biblioteca completa de jogos <i>instalados</i>:</h2></p>
+			<p><h2 style="text-align: center;">Biblioteca completa de jogos <select class="sel" id="sel"><option value="todos">Todos</option><option value="Zerado">Zerados</option><option value="jogando">Jogando</option><option value="Nunca Joguei">Nunca Joguei</option></select>:</h2></p>
 		
 			<div class="table">
 				<div class="table1" id="painel"></div>			
@@ -460,14 +485,37 @@
 				const cfg  = document.getElementById('btnc');
 				const con  = document.getElementById('cont');
 				
-				function mostrarJogosNaBiblioteca() {
+				function mostrarJogosNaBiblioteca(status) {
 				const painel = document.getElementById("painel");
 				painel.innerHTML = "";
 
 				const jogos = JSON.parse(localStorage.getItem("bibliotecaJogos")) || {};
-
 				for (let [nome, dados] of Object.entries(jogos)) {
+					
+					if (status == 'todos') {
+										let jogoDiv = document.createElement("div");
+					jogoDiv.className = "jg1"; // usa seu estilo atual
 
+					let nomeDiv = document.createElement("div");
+					nomeDiv.className = "nm1";
+					nomeDiv.textContent = nome;
+
+					let link = document.createElement("a");
+					link.href = `jogo.html?nome=${encodeURIComponent(nome)}`;
+
+					let img = document.createElement("img");
+					img.src = dados.codigo;
+					img.style.width = "13vw";
+					img.style.height = "11vw";
+					img.style.borderRadius = "11px";
+
+					link.appendChild(img);
+					jogoDiv.appendChild(nomeDiv);
+					jogoDiv.appendChild(link);
+
+					painel.appendChild(jogoDiv);
+					}
+					else if (dados.status == status) {
 					let jogoDiv = document.createElement("div");
 					jogoDiv.className = "jg1"; // usa seu estilo atual
 
@@ -491,7 +539,13 @@
 					painel.appendChild(jogoDiv);
 					}
 				}
-
+				}
+				
+				document.getElementById("sel").addEventListener("change", function() {
+				const status = this.value
+				console.log(status);
+				mostrarJogosNaBiblioteca(status)
+				});
 				
 				// Nome da página atual (ex: "biblioteca de jogos.html")
 				const page = location.pathname.split("/").pop();
@@ -529,7 +583,7 @@
 					con.classList.toggle("show");
 				});
 				
-				mostrarJogosNaBiblioteca();
+				mostrarJogosNaBiblioteca('todos');
 
 			});
 			</script>
