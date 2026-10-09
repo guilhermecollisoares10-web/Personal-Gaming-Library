@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Estatísticas de Desempenho</title>
+		<title>Estatísticas</title>
 		<link rel="stylesheet" href="Bibliotecas/CSS.css">
 		<link rel="stylesheet" href="Bibliotecas/menuFixo.css">
 	</head>
@@ -66,86 +66,60 @@
 		color: white;
 		font-size: 1vw;
 		}
+		p {
+		color: white;
+		}
 	</style>
 	<body>
 		<a href="biblioteca de jogos.html"> 
 		<button class="inie">início<i class="fa-solid fa-house" style="color: rgb(229, 234, 238);"></i></button>
 		</a>
-		<h1 style="text-align: center;">Estatísticas de Desempenho</h1>
-		<div style="display: flex;justify-content: space-around;position:relative;left:5vw;">
-		<h2 style="text-align:center; font-size: 30px;">Jogo:</h2>
-			<h2 style="text-align:left; font-size: 30px;">FPS médio:</h2>
-			<h2 style="text-align:center; font-size: 30px;">95° percentil:</h2>
-			<h2 style="text-align:right; font-size: 30px;">Nível de Desempenho:</h2>
-		</div>
-		<div class="edd" style="border: solid 2px black;border-radius: 15px;display: flex;">
-			<div>
-				<ul style="text-align:left; font-size:20px;">
-					<li>Fallout 4</li>
-					<li>Fortnite</li>
-					<li>GTA 5</li>
-					<li>Star Wars Outlaw</li>
-					<li>minecraft</li>
-					<li>Roblox</li>
-					<li>A Plague Tale: Requiem</li>
-					<li>Detroid: Become Human</li>
-					<li>Valorant</li>
-				</ul>
-			</div>
-			<div>
-				<ul style="text-align:left; font-size:20px;">
-					<li>222.6</li>
-					<li>71.5</li>
-					<li>118.4</li>
-					<li>50</li>
-					<li>200</li>
-					<li>214.7</li>
-					<li>41.9</li>
-					<li>119.0</li>
-					<li>359.8</li>
-				</ul>
-			</div>
-			<div>
-				<ul style="text-align:center; font-size:20px;">
-					<li>6 ms</li>
-					<li>17 ms</li>
-					<li>11 ms</li>
-					<li>---</li>
-					<li>---</li>
-					<li>5 ms</li>
-					<li>24 ms</li>
-					<li>10 ms</li>
-					<li>4 ms</li>
-				</ul>
-			</div>
-			<div>
-				<ul style="text-align:right; font-size:20px;">
-					<li>Excelente</li>
-					<li>Baixíssimo</li>
-					<li>Excelente</li>
-					<li>---</li>
-					<li>---</li>
-					<li>Excelente</li>
-					<li>Baixíssimo</li>
-					<li>Excelente</li>
-					<li>Excelente</li>
-				</ul>
-			</div>
-		</div>
-		<p><h2 style="text-align: left; color: white;">Mais:</h2></p>
-			<ul>
-			<li><p><a style="font-size: 25px;" href="file:///C:/Users/Usuario/Desktop/testes/BibliotecaPessoal/biblioteca%20de%20jogos.html"><button class="btn">Bibioteca</button></a></p></li>
-			<li><a style="font-size: 20px;" href="file:///C:/Users/Usuario/Desktop/testes/BibliotecaPessoal/zerados.html"><button class="btn">Jogos Zerados</button></a></li></p></li>
-			<li><p><a style="font-size: 25px;" href="file:///C:/Users/Usuario/Desktop/testes/BibliotecaPessoal/Abandonados.html"><button class="btn">Jogos Abandonados</button></a></p></li>
-			<!--<li><a style="font-size: 25px;" href="file:///C:/Users/Usuario/Desktop/testes/2teste/Jogando.html">Jogando Agora</a></li>--> 
-			</ul>
-			<div class="cfg">
+		<h1 style="text-align: center;">Estatísticas</h1>
+		<p id="painel"></p>
+			<!--<div class="cfg">
 				<h2 style="color: white;">Configuração do Computador</h2><br>
 				<ul>
 					<div class="gpu"><li style="color: #Nota: 9f111b;">Placa De Vídeo: AMD Radeon RX6600</li></div>
 					<div class="cpu"><p><li style="color: #bd3737;">Processador: AMD ryzen 7 5700G</li></p></div>
 					<div class="plm"><li style="color: #b11623;">Placa-Mãe: ASUS TUF Gaming A520M-PLUS||</li><br></div>
 				</ul>
-			</div>
+			</div>-->
+	
+	<script>
+	const painel = document.getElementById('painel');
+	const jogos = JSON.parse(localStorage.getItem("bibliotecaJogos")) || {};
+	const estatisticas = JSON.parse(localStorage.getItem("estatisticas")) || {};
+	let jogo = []
+	let horas = []
+	horasJogadas = 0
+	function calcularEstatisticas() {
+	jogo = []
+	horas = []
+	horasJogadas = 0
+	console.log(jogos);
+	for ([nome, dados] of Object.entries(jogos)) {
+	jogo.push(nome);
+	horas.push(parseInt(dados.tempo));
+	horasJogadas = horas.reduce((acc, num) => acc + num, 0)
+	if (nome in estatisticas) {
+		print("Jogo ja registrado");
+		}
+	else {
+	estatisticas[nome] = {
+		Jogo: nome,
+		HorasRegistradas: dados.tempo
+		}
+	}
+	}
+	console.log(jogo, horas)
+	painel.innerHTML = `Número de jogos registrados: ${jogo.length} jogos; <br>
+	Jogos registrados: ${jogo.join('--')}; <br>
+	Horas totais jogadas: ${horasJogadas} horas; <br>
+	${JSON.stringify(estatisticas)};
+	`
+	}
+	calcularEstatisticas()
+	console.log(estatisticas)
+	</script>
 	</body>
 </html>
