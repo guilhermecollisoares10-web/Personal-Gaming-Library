@@ -277,6 +277,12 @@
 		<input type="text" id="nome" placeholder="Digite o nome"><br>
 		<label for="genero">Digite o genero do jogo:</label>
 		<input type="text" id="genero" placeholder="Digite o genero"><br>
+		<select id="sta" style="padding: 30px; background-color: black; color: var(--tx-color1);border-radius: 13px; cursor: pointer;">
+		<option value="nulo">Selecione um status:</option>
+		<option id="zer">Zerado</option>
+		<option id="jog">jogando</option>
+		<option id="nun">Nunca Joguei</option>
+		</select><br>
 		<label for="not">Digite a nota para o jogo:</label>
 		<input type="text" id="not" placeholder="Digite a nota"><br>
 		<label for="dev">Digite o dev do jogo:</label>
@@ -326,6 +332,7 @@
 						Tempo: ${dados.tempo}<br>
 						lancamento: ${dados.lancamento}<br>
 						Codigo: ${dados.codigo}<br>
+						Status: ${dados.status}
 					</p>
 					<hr>
 				`;
@@ -341,8 +348,9 @@
 		  document.getElementById('temp').value = '';
 		  document.getElementById('lan').value = '';
 		  document.getElementById('img').value = '';
+		  document.getElementById('sta').value = 'nulo';
 		}
-		function adicionarJogo(nome, genero, desenvolvedora, codigo, tempo, data, nota) {
+		function adicionarJogo(nome, genero, desenvolvedora, codigo, tempo, data, nota, sta) {
 		  if (jogos[nome]) {
 			console.log(`'${nome}' já registrado. Atualizando dados...`);
 			
@@ -358,7 +366,8 @@
 			nota: nota,
 			tempo: tempo,
 			lancamento: data,
-			codigo: codigo
+			codigo: codigo,
+			status: sta
 		  };
 			localStorage.setItem("bibliotecaJogos", JSON.stringify(jogos));
 		}
@@ -384,17 +393,19 @@
 		let Tempo = document.getElementById('temp').value;
 		let Lan = document.getElementById('lan').value;
 		let Img = document.getElementById('img').value;
+		let Sta = document.getElementById('sta').value;
 		let valoresBrutos = {
 		jogo: JogoAtual,
 		genero: Genero,
 		desenvolvedora: Dev,
 		nota: Not,
+		status: Sta,
 		tempo: Tempo,
 		lançamento: Lan,
 		img: Img
 		}
 		let valores = {}
-		let listateste = [JogoAtual, Genero, Dev, Img, Tempo, Lan, Not];
+		let listateste = [JogoAtual, Genero, Dev, Img, Tempo, Lan, Not, Sta];
 		for (let [item, valor] of Object.entries(valoresBrutos)) {
 			if (valor !== ''){
 			valores[item] = "Preenchido"
@@ -442,6 +453,7 @@
 		let Tempo = document.getElementById('temp').value;
 		let Lan = document.getElementById('lan').value;
 		let Img = document.getElementById('img').value;
+		let Sta = document.getElementById('sta').value = '';
 		if (JogoAtual !== '') {
 			excluirJogos(JogoAtual);
 			console.log('Jogo excluído com sucesso!')
@@ -489,6 +501,7 @@ document.getElementById("sel").addEventListener("change", function() {
         document.getElementById("lan").value = dados.lancamento;
         document.getElementById("not").value = dados.nota;
         document.getElementById("dev").value = dados.desenvolvedora;
+		document.getElementById("sta").value = dados.status;
     }
 });
 
