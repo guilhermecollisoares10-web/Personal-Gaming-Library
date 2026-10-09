@@ -61,3 +61,7 @@ Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` p
 ## Autor
 
 Desenvolvido por Guilherme Colli Soares.
+
+## Observação
+
+Eu sou um programador em desenvolvimento e estou aberto a correções, qualquer parte do código que estiver errada ou mal otimizada por favor comunicar para que eu possa aprender
