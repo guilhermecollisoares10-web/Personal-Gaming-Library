@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<link rel="stylesheet" href="CSS.css">
-		<link rel="stylesheet" href="menuFixo.css">	
+	<title> Adicionar Jogos</title>
+	<link rel="stylesheet" href="CSS.css">
+	<link rel="stylesheet" href="menuFixo.css">	
 	</head>
 	<style>
 	@media(max-width:980px) {
@@ -13,6 +14,10 @@
 		--tx-color4: black;
 		--cb-color: #121212;
 		transition: background-color 0.3s, color 0.3s;
+		}
+		
+		* {
+		font-family: "Montserrat", sans-serif;
 		}
 	body {
 	background-color: var(--bg-color);
@@ -113,7 +118,7 @@
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	left: 900px;
+	left: 1000px;
 	bottom: 550px;
 	width: 200px;
 	margin-bottom: 10px;
@@ -142,6 +147,9 @@
 		--cb-color: #121212;
 		transition: background-color 0.3s, color 0.3s;
 		}
+	* {
+	font-family: "Montserrat", sans-serif;
+	}
 	body {
 	background-color: var(--bg-color);
 	}
@@ -235,6 +243,7 @@
 	.container {
 	position: relative;
 	top: 150px;
+	padding: 0px;
 	}
 	
 	.buttons {
@@ -281,11 +290,11 @@
 		<select id="sel" style="padding: 30px; background-color: black; color: var(--tx-color1);border-radius: 13px; cursor: pointer;">
 		</select>
 		<div class="buttons" >
-			<button class="cards" style="margin-left: 20px; background-color: #314c53;width: 150px; padding: 20px; border: 4px var(--tx-color1) solid;" id="add">Adicionar/atualizar</button>
-			<button class="cards" style="margin-left: 20px; background-color: #314c53; padding: 20px; border: 4px var(--tx-color1) solid;" id="exc" >Excluir</button>
-			<button class="cards" style="margin-left: 20px; background-color: #314c53;color: var(--tx-color2); padding: 20px; border: 4px var(--tx-color1) solid;" id="exi" >Exibir</button>
-			<button class="cards" style="margin-left: 20px; background-color: #314c53;color: var(--tx-color2); padding: 20px; border: 4px var(--tx-color1) solid;" id="limp" >Limpar lista</button>
-			<button class="cards" style="margin-left: 20px; background-color: #314c53;color: var(--tx-color2); padding: 20px; border: 4px var(--tx-color1) solid;" id="show" >Mostrar Cards</button>
+			<button class="cards" style="margin-left: 20px; background-color: #314c53;width: 150px;color: var(--tx-color1); padding: 20px; border: 4px var(--tx-color1) solid;" id="add">Adicionar/atualizar</button>
+			<button class="cards" style="margin-left: 20px; background-color: #314c53; padding: 20px;color: var(--tx-color1); border: 4px var(--tx-color1) solid;" id="exc" >Excluir</button>
+			<button class="cards" style="margin-left: 20px; background-color: #314c53;color: var(--tx-color1); padding: 20px; border: 4px var(--tx-color1) solid;" id="exi" >Exibir</button>
+			<button class="cards" style="margin-left: 20px; background-color: #314c53;color: var(--tx-color1); padding: 20px; border: 4px var(--tx-color1) solid;" id="limp" >Limpar lista</button>
+			<button class="cards" style="margin-left: 20px; background-color: #314c53;color: var(--tx-color1); padding: 20px; border: 4px var(--tx-color1) solid;" id="show" >Mostrar Cards</button>
 		</div>
 		<p class="panel" style="padding: 70px;color: var(--tx-color1);" id="painel"></p>
 	</div>
@@ -462,7 +471,7 @@ function carregarSelect() {
     }
 }
 
-console.log(localStorage.getItem("bibliotecaJogos")); // <-- aqui
+
 
 carregarSelect();
 
