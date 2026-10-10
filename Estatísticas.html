@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>Estatísticas</title>
-		<link rel="stylesheet" href="Bibliotecas/CSS.css">
-		<link rel="stylesheet" href="Bibliotecas/menuFixo.css">
+		<link rel="stylesheet" href="CSS.css">
+		<link rel="stylesheet" href="menuFixo.css">
 	</head>
 	<style>
 	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
@@ -87,37 +87,71 @@
 	
 	<script>
 	const painel = document.getElementById('painel');
+	
 	const jogos = JSON.parse(localStorage.getItem("bibliotecaJogos")) || {};
+	
 	const estatisticas = JSON.parse(localStorage.getItem("estatisticas")) || {};
-	let jogo = []
-	let horas = []
-	horasJogadas = 0
+	
+	let jogo = [];
+	
+	let horas = [];
+	
+	horasJogadas = 0;
+	
 	function calcularEstatisticas() {
-	jogo = []
-	horas = []
-	horasJogadas = 0
-	console.log(jogos);
-	for ([nome, dados] of Object.entries(jogos)) {
-	jogo.push(nome);
-	horas.push(parseInt(dados.tempo));
-	horasJogadas = horas.reduce((acc, num) => acc + num, 0)
-	if (nome in estatisticas) {
-		print("Jogo ja registrado");
+		jogo = [];
+		
+		horas = [];
+		
+		horasJogadas = 0;
+		
+		console.log(jogos);
+		
+		for ([nome, dados] of Object.entries(jogos)) {
+			jogo.push(nome);
+			
+			horas.push(parseInt(dados.tempo));
+			
+			horasJogadas = horas.reduce((acc, num) => acc + num, 0);
+			
+				if (nome in estatisticas) {
+					print("Jogo ja registrado");
+					}				
+				else  {
+					estatisticas[nome] = {
+					Jogo: nome,
+					HorasRegistradas: dados.tempo
+					}
+				}
+			checkTempo()
+			painel.innerHTML = `Número de jogos registrados: ${jogo.length} jogos; <br>
+			Jogos registrados: ${jogo.join('--')}; <br>
+			Horas totais jogadas: ${horasJogadas} horas; <br>
+			Tempo médio por jogo: ${horasJogadas / jogo.length} horas; <br>
+			`
+
+			
+			console.log('oi')
 		}
-	else {
-	estatisticas[nome] = {
-		Jogo: nome,
-		HorasRegistradas: dados.tempo
+		for (let [nome, dados] of Object.entries(jogos)) {
+					painel.innerHTML += `
+			<p><strong>${nome}</strong> <br>
+			${dados.tempo} horas registradas <br>
+			Gênero: ${dados.genero}<br>
+			</p>
+			`
+		}
+		console.log(jogo, horas);
+		
+		
+	}
+	
+	function checkTempo() {
+		if (parseInt(horasJogadas) >= 1000) {
+			alert("Você tem mais de 1000 horas registradas! Parabéns!")
 		}
 	}
-	}
-	console.log(jogo, horas)
-	painel.innerHTML = `Número de jogos registrados: ${jogo.length} jogos; <br>
-	Jogos registrados: ${jogo.join('--')}; <br>
-	Horas totais jogadas: ${horasJogadas} horas; <br>
-	${JSON.stringify(estatisticas)};
-	`
-	}
+	
 	calcularEstatisticas()
 	console.log(estatisticas)
 	</script>
