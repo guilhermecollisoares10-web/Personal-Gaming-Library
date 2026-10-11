@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="menuFixo.css">	
 	</head>
 	<style>
-	@media(max-width:980px) {
+	@media(max-width:1239px) {
 		:root {
 		--bg-color: #0f141a;
 		--tx-color1: white;
@@ -138,7 +138,7 @@
 	left: 220px;
 	}
 	}
-	@media(min-width:981px) {
+	@media(min-width:1240px) {
 	:root {
 		--bg-color: #0f141a;
 		--tx-color1: white;
@@ -275,22 +275,36 @@
 	<p>Não é necessário que todas as informações sejam preenchidas para adicionar um jogo, é possivel apenas colocar aquilo que voce deseja e, se preciso, é possivel adicionar depois</p>
 		<label for="nome">Digite o nome do jogo:</label>
 		<input type="text" id="nome" placeholder="Digite o nome"><br>
-		<label for="genero">Digite o genero do jogo:</label>
-		<input type="text" id="genero" placeholder="Digite o genero"><br>
-		<select id="sta" style="padding: 30px; background-color: black; color: var(--tx-color1);border-radius: 13px; cursor: pointer;">
+		<div style="display: flex; flex-direction: column;">
+		<label for="genero">Gênero do Jogo:</label>
+		<input type="text" id="genero" list="lista-generos" placeholder="Digite ou selecione o gênero">
+		<datalist id="lista-generos">
+		  <option value="Ação">
+		  <option value="Aventura">
+		  <option value="RPG">
+		  <option value="Terror">
+		  <option value="Estratégia">
+		  <option value="Simulação">
+		  <option value="Esportes">
+		  <option value="Tiro (FPS/TPS)">
+		  <option value="Plataforma">
+		  <option value="Indie">
+		</datalist><br>
+		<select id="sta" style="padding: 30px; background-color: black; color: var(--tx-color1);border-radius: 13px; cursor: pointer;margin: 20px;width: 200px;">
 		<option value="nulo">Selecione um status:</option>
 		<option id="zer">Zerado</option>
 		<option id="jog">jogando</option>
 		<option id="nun">Nunca Joguei</option>
 		</select><br>
+		</div>
 		<label for="not">Digite a nota para o jogo:</label>
-		<input type="text" id="not" placeholder="Digite a nota"><br>
+		<input type="number" id="not" placeholder="Digite a nota"><br>
 		<label for="dev">Digite o dev do jogo:</label>
 		<input type="text" id="dev" placeholder="Digite a desenvolvedora"><br>		
 		<label for="temp">Digite o tempo jogado:</label>
-		<input type="text" id="temp" placeholder="Digite o tempo"><br>
+		<input type="number" id="temp" placeholder="Digite o tempo"><br>
 		<label for="lan">Digite o ano em que o jogo foi lançado:</label>
-		<input type="text" id="lan" placeholder="Digite o ano de lancamento do jogo"><br>
+		<input type="number" id="lan" placeholder="Digite o ano de lancamento do jogo"><br>
 		<label for="img">Selecione uma imagem para o jogo:</label>
 		<input type="text" id="img" placeholder="Digite o codigo da imagem"><br>
 		<select id="sel" style="padding: 30px; background-color: black; color: var(--tx-color1);border-radius: 13px; cursor: pointer;">
@@ -342,7 +356,7 @@
 		
 		function cleanInput() {
 		document.getElementById('nome').value = '';
-		  document.getElementById('genero').value = '';
+		  document.getElementById('genero').value = 'nulo';
 		  document.getElementById('dev').value = '';
 		  document.getElementById('not').value = '';
 		  document.getElementById('temp').value = '';
