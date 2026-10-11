@@ -2,8 +2,9 @@
 <html>
 	<head>
 		<title>Biblioteca</title>
-		<link rel="stylesheet" href="CSS.css">
-		<link rel="stylesheet" href="menuFixo.css">	
+		<link rel="stylesheet" href="Bibliotecas/CSS.css">
+		<link rel="stylesheet" href="Bibliotecas/menuFixo.css">	
+		<link rel="stylesheet" href="Bibliotecas/CSSPagPrinc.css">		
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 		<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
 
@@ -12,486 +13,380 @@
 		<style>
 		@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-		@media (max-width: 980px) {
-			
-			:root {
-		--bg-color: #0f141a;
-		--tx-color1: white;
-		--fn-color: #314c53;
-		--tx-color4: black;
-		--cb-color: #121212;
-		transition: background-color 0.3s, color 0.3s;
-		}
-		.light-mode {
-		--bg-color: #fdf2c5;
-		--tx-color1: #000000;
-		--tx-color4: #000000;
-		--cb-color: #e7edea;
-		--fn-color: #ffffff;
-		transition: background-color 0.3s, color 0.3s;
-		}
-		.dark-mode {
-		--bg-color: #0f141a;
-		--tx-color1: white;
-		--tx-color4: black;
-		--cb-color: #121212;
-		--fn-color: #314c53;
-		transition: background-color 0.3s, color 0.3s;
-		}
-		
-			body {
-				background-color: var(--bg-color);
-				margin: 0;
-				padding: 0;
-				font-size: 16px;
-			}
-
-			h1 {
-				font-size: 28px;
-				color: var(--tx-color1);
-				text-align: center;
-			}
-
-			h2 {
-				font-size: 22px;
-				color: var(--tx-color1);
-				text-align: center;
-			}
-			
-			p {
-			color: var(--tx-color1);
-			}
-			.mai {
-				font-size: 22px;
-				text-align: center;
-				left: 0;
-			}
-
-			.cfg {
-				margin: 20px 10px;
-				padding: 15px;
-				font-size: 18px;
-				box-shadow: none;
-				color: var(--tx-color1);
-			}
-
-			.gpu, .cpu, .plm {
-				font-size: 16px;
-				padding: 10px;
-				margin-bottom: 10px;
-			}
-
-			.table {
-				flex-direction: row;
-				overflow-x: scroll;
-				align-items: center;
-				justify-content: center;
-			}
-			
-			.table1 {
-				display: flex;
-				flex-direction: row;
-				font-family: "Montserrat", sans-serif;
-				align-items: center;
-				justify-content: left;
-			}
-			.jg1, .jg2 {
-				color: var(--tx-color1);
-				margin: 10px;
-			}
-
-			.nm1, .nm2 {
-				border: 1px solid black;
-				border-radius: 13px;
-				width: 10vw;
-				margin-bottom: 20px;
-				background-color: var(--cb-color);
-				padding: 10px;
-				font-size: 20px;
-				color: var(--tx-color1);
-			}
-			
-		.sel {
-		background-color: #121920;
-		border-radius: 15px;
-		cursor: pointer;
-		border: #5b5d61 3px solid;
-		color: white;
-		padding: 15px;
-		font-size: 2vw;
-	    font-family: "Italiana", sans-serif;
-		}
-			img {
-				width: 90%;
-				height: auto;
-				margin: auto;
-			}
-
-			.menuu {
-				position: relative;
-				top: 20px;
-				right: 0px;
-				z-index: 9999;
-			}
-
-			.btnm {
-				font-size: 16px;
-				padding: 10px;
-			}
-
-			.mencont {
-				min-width: 160px;
-				max-width: 200px;
-				font-size: 16px;
-				padding: 10px;
-				margin-top: 10px;
-			}
-
-			.mencont a {
-				padding: 12px;
-				margin-top: 10px;
-				font-size: 16px;
-			}
-
-			.color {
-				font-size: 16px;
-				padding: 10px;
-				margin-top: 15px;
-			}
-		}
-
-		@media (min-width:981px){
+@media (min-width:981px){
 
 
 		:root {
-		--bg-color: #0f141a;
-		--tx-color1: white;
-		--fn-color: #314c53;
-		--tx-color4: black;
-		--cb-color: #121212;
-		transition: background-color 0.3s, color 0.3s;
+			--bg-color: #0f141a;
+			--tx-color1: white;
+			--fn-color: #314c53;
+			--tx-color4: black;
+			--cb-color: #121212;
+			transition: background-color 0.3s, color 0.3s;
 		}
+
 		.light-mode {
-		--bg-color: #fdf2c5;
-		--tx-color1: #000000;
-		--tx-color4: #000000;
-		--cb-color: #e7edea;
-		--fn-color: #ffffff;
-		transition: background-color 0.3s, color 0.3s;
+			--bg-color: #fdf2c5;
+			--tx-color1: #000000;
+			--tx-color4: #000000;
+			--cb-color: #e7edea;
+			--fn-color: #ffffff;
+			transition: background-color 0.3s, color 0.3s;
 		}
+
 		.dark-mode {
-		--bg-color: #0f141a;
-		--tx-color1: white;
-		--tx-color4: black;
-		--cb-color: #121212;
-		--fn-color: #314c53;
-		transition: background-color 0.3s, color 0.3s;
+			--bg-color: #0f141a;
+			--tx-color1: white;
+			--tx-color4: black;
+			--cb-color: #121212;
+			--fn-color: #314c53;
+			transition: background-color 0.3s, color 0.3s;
 		}
+
 		body {
-		background-color: var(--bg-color);
-		transition: background-color 0.3s, color 0.3s;
+			background-color: var(--bg-color);
+			transition: background-color 0.3s, color 0.3s;
 		}
+
 		h1 {
-		font-family: "Montserrat", sans-serif;
-		font-size:3vw;
+			font-family: "Montserrat", sans-serif;
+			font-size:3vw;
 		}
+
 		h2 {
-		font-size: 2vw;
-		color: var(--tx-color1);
+			font-size: 2vw;
+			color: var(--tx-color1);
 		}
+
 		.mai {
-		font-family: "Montserrat", sans-serif;
-		position:relative;
-		left:0;
-		font-size:2.5vw;
+			font-family: "Montserrat", sans-serif;
+			position:relative;
+			left:0;
+			font-size:2.5vw;
 		}
+
 		.cfg {
-		border: solid black 3px;
-		padding: 10px;
-		margin: 30px;
-		border-radius: 15px;
-		box-shadow: 10px 10px 5px gray;
-		background-color: #8e8e8e;
-		color: #bd3737;
-		font-size: 20px;
-		font-family: "Montserrat", sans-serif;
-		margin-bottom:15vw;
+			border: solid black 3px;
+			padding: 10px;
+			margin: 30px;
+			border-radius: 15px;
+			box-shadow: 10px 10px 5px gray;
+			background-color: #8e8e8e;
+			color: #bd3737;
+			font-size: 20px;
+			font-family: "Montserrat", sans-serif;
+			margin-bottom:15vw;
 		}
+
 		.gpu {
-		border: solid black 3px;
-		padding: 3px;
-		border-radius: 15px;
-		box-shadow: 6px 6px 1px gray;
-		background-color: #9e9e9e;
-		font-family: "Montserrat", sans-serif;
-		font-size:1vw
+			border: solid black 3px;
+			padding: 3px;
+			border-radius: 15px;
+			box-shadow: 6px 6px 1px gray;
+			background-color: #9e9e9e;
+			font-family: "Montserrat", sans-serif;
+			font-size:1vw
 		}
+
 		.cpu {
-		border: solid black 3px;
-		padding: 3px;
-		border-radius: 15px;
-		box-shadow: 6px 6px 1px gray;
-		background-color: #9e9e9e;
-		font-family: "Montserrat", sans-serif;
-		font-size:1vw
+			border: solid black 3px;
+			padding: 3px;
+			border-radius: 15px;
+			box-shadow: 6px 6px 1px gray;
+			background-color: #9e9e9e;
+			font-family: "Montserrat", sans-serif;
+			font-size:1vw
 		}
+
 		.plm {
-		border: solid black 3px;
-		padding: 3px;
-		border-radius: 15px;
-		box-shadow: 6px 6px 1px gray;
-		background-color: #9e9e9e;
-		font-family: "Montserrat", sans-serif;
-		font-size:1vw
+			border: solid black 3px;
+			padding: 3px;
+			border-radius: 15px;
+			box-shadow: 6px 6px 1px gray;
+			background-color: #9e9e9e;
+			font-family: "Montserrat", sans-serif;
+			font-size:1vw
 		}
+
 		ul {
-		font-family: "Montserrat", sans-serif;
-		color: var(--tx-color1);
+			font-family: "Montserrat", sans-serif;
+			color: var(--tx-color1);
 		}
+
 		table {
-		font-family: "Montserrat", sans-serif;
+			font-family: "Montserrat", sans-serif;
 		}
+
 		a {
-		text-decoration: none;
-		color: #c9d1d3;
+			text-decoration: none;
+			color: #c9d1d3;
 		}
+
 		.ul {
-		text-decoration: none;
-		color: var(--tx-color4);
+			text-decoration: none;
+			color: var(--tx-color4);
 		}
+
 		.btn {
-		background-color:#2b2823;
-		border: 3px solid white;
-		border-radius: 15px;
-		padding: 13px;
-		color: var(--tx-color1);
-		font-size: 1vw;
+			background-color:#2b2823;
+			border: 3px solid white;
+			border-radius: 15px;
+			padding: 13px;
+			color: var(--tx-color1);
+			font-size: 1vw;
 		}
+
 		img {
-		transition: transform 0.5s ease;
+			transition: transform 0.5s ease;
 		}
+
 		.tr {
-		font-size: 1vw
+			font-size: 1vw
 		}
+
 		.tab {
-		width: 98%;
-		position:relative;
-		margin:0 0 0.5vw 1vw;
+			width: 98%;
+			position:relative;
+			margin:0 0 0.5vw 1vw;
 		}
+
 		.bibl {
-		color: var(--tx-color1);
+			color: var(--tx-color1);
 		}
-		img:hover {
-		transform: scale(1.07);
-		box-shadow: 1px 1px 1px 1px black;
+
+			img:hover {
+			transform: scale(1.07);
+			box-shadow: 1px 1px 1px 1px black;
 		}
+
 		button:hover {
-		box-shadow: 4px 4px 3px 3px black;
-		transform: scale(1.05);
+			box-shadow: 4px 4px 3px 3px black;
+			transform: scale(1.05);
 		}
+
 		button {
-		transition: transform 0.5s ease;
-		cursor: pointer;
+			transition: transform 0.5s ease;
+			cursor: pointer;
 		}
+
 		.table {
-		display: flex;
-		flex-direction: row;
-		font-family: "Montserrat", sans-serif;
-		overflow-x: auto;
-		scroll-snap-type: x mandatory;
-		scroll-behavior: smooth;
+			display: flex;
+			flex-direction: row;
+			font-family: "Montserrat", sans-serif;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			scroll-behavior: smooth;
 		}
+
 		.table1 {
-		display: flex;
-		flex-direction: row;
-		font-family: "Montserrat", sans-serif;
-		align-items: center;
-		justify-content: center;
+			display: flex;
+			flex-direction: row;
+			font-family: "Montserrat", sans-serif;
+			align-items: center;
+			justify-content: center;
 		}
+
 		.jg1 {
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-		justify-content: center;
-		align-items: center;
-		margin-right: 0.5vw;
-		margin-left: 2vw;
-		scroll-snap-align: start;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			margin-right: 0.5vw;
+			margin-left: 2vw;
+			scroll-snap-align: start;
 		}
+
 		.nm1 {
-		border: 1px solid black;
-		border-radius: 13px;
-		width: 11vw;
-		margin-bottom: 20px;
-		background-color: var(--cb-color);
-		padding: 10px;
-		font-size: 20px;
-		color: var(--tx-color1);
+			border: 1px solid black;
+			border-radius: 13px;
+			width: 11vw;
+			margin-bottom: 20px;
+			background-color: var(--cb-color);
+			padding: 10px;
+			font-size: 20px;
+			color: var(--tx-color1);
 		}
+
 		.nm2 {
-		border: 1px solid black;
-		border-radius: 13px;
-		width: 15vw;
-		margin-bottom: 20px;
-		background-color: var(--cb-color);
-		padding: 10px;
-		font-size: 20px;
-		color: var(--tx-color1);
+			border: 1px solid black;
+			border-radius: 13px;
+			width: 15vw;
+			margin-bottom: 20px;
+			background-color: var(--cb-color);
+			padding: 10px;
+			font-size: 20px;
+			color: var(--tx-color1);
 		}
+
 		.jg2 {
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-		justify-content: center;
-		align-items: center;
-		margin-right: 1vw;
-		margin-left: 1vw;
-		position: relative;
-		bottom: 0.8vw;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			margin-right: 1vw;
+			margin-left: 1vw;
+			position: relative;
+			bottom: 0.8vw;
 		}
+
 		.menuu {
-		position: fixed;
-		display: inline-block;
-		top: 3vw;
-		left: 85vw;
-		z-index: 111111111111111111;
-		
-		
+			position: fixed;
+			display: inline-block;
+			top: 3vw;
+			left: 85vw;
+			z-index: 111111111111111111;	
 		}
+
 		.btnm {
-		 cursor: pointer;
-		 background-color:var(--fn-color);
-		border: 3px solid white;
-		border-radius: 15px;
-		padding: 13px;
-		color: var(--tx-color1);
-		font-size: 1vw;
-
+			cursor: pointer;
+			background-color:var(--fn-color);
+			border: 3px solid white;
+			border-radius: 15px;
+			padding: 13px;
+			color: var(--tx-color1);
+			font-size: 1vw;
 		}
+
 		.mencont {
-
-		position: absolute;
-		top: 100%;
-		left: 0;
-		z-index: 100000000000000000000000000000;
-		background-color: #ffffff;
-		max-height: 90vh;
-		box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-		min-width: 120px;
-		max-width: 140px;
-		background-color:var(--fn-color);
-		border: 1px solid #ccc;
-        border-radius: 5px;
-		padding: 13px;
-		color: var(--tx-color1);
-		font-size: 1vw;
-		margin-top: 1vw;
-		overflow-y: auto;
-		opacity: 0;
-		max-height: 0;
-		overflow: hidden;
-		transition: opacity 0.4s ease, max-height 0.4s ease;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			z-index: 100000000000000000000000000000;
+			background-color: #ffffff;
+			max-height: 90vh;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+			min-width: 120px;
+			max-width: 140px;
+			background-color:var(--fn-color);
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			padding: 13px;
+			color: var(--tx-color1);
+			font-size: 1vw;
+			margin-top: 1vw;
+			overflow-y: auto;
+			opacity: 0;
+			max-height: 0;
+			overflow: hidden;
+			transition: opacity 0.4s ease, max-height 0.4s ease;
 		}
-
-		.show {
-
-		opacity: 1;
-		max-height: 500px; /* um valor grande o suficiente */
-		}
+		
 		.mencont a {
-		display: block;
-		padding: 2vw;
-		text-decoration: none;
-		color: var(--tx-color1);
-		margin-top: 2vw;
-		border: 2px solid white;
-		background-color: #121212;
-		border-radius: 13px;
-		box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-		transition: transform 0.5s;
-
+			display: block;
+			padding: 2vw;
+			text-decoration: none;
+			color: var(--tx-color1);
+			margin-top: 2vw;
+			border: 2px solid white;
+			background-color: #121212;
+			border-radius: 13px;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+			transition: transform 0.5s;
 		}
+
 		.mencont a:hover {
-		transform: scale(1.05);
+			transform: scale(1.05);
 		}
-		.color {
-		background-color:#1a1c27;
-		border: 3px solid white;
-		border-radius: 15px;
-		padding: 13px;
-		color: white;
-		font-size: 1vw;
-		margin-top: 10px;
+		.show {
+			opacity: 1;
+			max-height: 500px; /* um valor grande o suficiente */
+		}
 
+		.color {
+			background-color:#1a1c27;
+			border: 3px solid white;
+			border-radius: 15px;
+			padding: 13px;
+			color: white;
+			font-size: 1vw;
+			margin-top: 10px;
 		}
 		
 		.sel {
-		background-color: #121920;
-		border-radius: 15px;
-		cursor: pointer;
-		border: #5b5d61 3px solid;
-		color: white;
-		padding: 15px;
-		font-size: 2vw;
-	    font-family: "Italiana", sans-serif;
+			background-color: #121920;
+			border-radius: 15px;
+			cursor: pointer;
+			border: #5b5d61 3px solid;
+			color: white;
+			padding: 15px;
+			font-size: 2vw;
+			font-family: "Italiana", sans-serif;
 		}
 		
 		.pesquisa {
-		position: fixed;
-		display: inline-block;
-		top: 3vw;
-		left: 2.5vw;
-		z-index: 111111111111111111;		
+			position: fixed;
+			display: inline-block;
+			top: 3vw;
+			left: 2.5vw;
+			z-index: 111111111111111111;		
 		}
 		.pesquisaPainel {
-		opacity: 0;
-		margin: 30px;
-		width: 1000px;
-		height: 600px;
-		position: fixed;
+			opacity: 0;
+			margin: 30px;
+			width: 1000px;
+			height: 600px;
+			position: fixed;
 		}
-		}
+}
+
 		</style>
-	<body id="body">
+
+<body id="body">
+
 		<div class="pesquisaPainel" id="pesquisa">
-		<label for="input">Selecione a opção desejada:</label>
-		<input type="text" id="input" list="lista-generos" placeholder="Digite ou selecione o gênero">
-		<datalist id="lista-generos">
-		  <option value="Ação">
-		  <option value="Aventura">
-		  <option value="RPG">
-		  <option value="Terror">
-		  <option value="Estratégia">
-		  <option value="Simulação">
-		  <option value="Esportes">
-		  <option value="Tiro (FPS/TPS)">
-		  <option value="Plataforma">
-		  <option value="Indie">
-		</datalist><br>
+
+			<label for="input">Selecione a opção desejada:</label>
+			<input type="text" id="input" list="lista-generos" placeholder="Digite ou selecione o gênero">
+			
+			<datalist id="lista-generos">
+				  
+				  <option value="Ação">
+				  <option value="Aventura">
+				  <option value="RPG">
+				  <option value="Terror">
+				  <option value="Estratégia">
+				  <option value="Simulação">
+				  <option value="Esportes">
+				  <option value="Tiro (FPS/TPS)">
+				  <option value="Plataforma">
+				  <option value="Indie">
+
+			</datalist><br>
+
 		</div>
+
 		<div class="menu">
-		<!--<div class="pesquisa">
-		<button id="pesqui" class="btnz" >Opções de pesquisa</button>				
-							<div id="selPesq" class="mencont" style="max-width: 400px;">
-							<select id="selectFormal" class="color">
-							<option>Selecione um método de pesquisa</option>
-							<option id="genero">Genero</option>
-							<option id="acao">Açao</option>
-							</select>
-							</div>
-		</div>-->
-							
-		<div class="abn"><a style="font-size: 1vw;" href="Adicionar_Jogos.html"><button class="btna">Adicionar Jogos</button></a></div>
-		<h1 class="bar"><div class="bib">Biblioteca de Jogos</div></h1>	
-		<div class="est"><a style="font-size: 1vw;" href="Estatísticas.html"><button class="btne">Estatísticas</button></a></div>
-							<div class="menuu">
-							<button id="btnc" class="btnm"> Configurações <br><i class="material-symbols-outlined">settings</i></button>
-								<div id="cont" class="mencont">
-									  <button id="btndk" class="color">modo escuro</button>
-									  <button id="btnlg" class="color">modo claro</button>
+			<!--<div class="pesquisa">
+			<button id="pesqui" class="btnz" >Opções de pesquisa</button>				
+								<div id="selPesq" class="mencont" style="max-width: 400px;">
+								<select id="selectFormal" class="color">
+								<option>Selecione um método de pesquisa</option>
+								<option id="genero">Genero</option>
+								<option id="acao">Açao</option>
+								</select>
 								</div>
-							</div>
+			</div>-->
+							
+			<div class="abn"><a style="font-size: 1vw;" href="Adicionar_Jogos.html"><button class="btna">Adicionar Jogos</button></a></div>
+
+			<h1 class="bar"><div class="bib">Biblioteca de Jogos</div></h1>	
+
+			<div class="est"><a style="font-size: 1vw;" href="Estatísticas.html"><button class="btne">Estatísticas</button></a></div>
+
+			<div class="menuu">
+				<button id="btnc" class="btnm"> Configurações <br><i class="material-symbols-outlined">settings</i></button>
+
+				<div id="cont" class="mencont">
+					 <button id="btndk" class="color">modo escuro</button>
+					  <button id="btnlg" class="color">modo claro</button>
+				</div>
+
+			</div>
+
 		</div>	
+
 		<div class="men" onclick="close()">
 			
 			<p><h2 style="text-align: center;">Biblioteca completa de jogos <select class="sel" id="sel"><option value="todos">Todos</option><option value="Zerado">Zerados</option><option value="jogando">Jogando</option><option value="Nunca Joguei">Nunca Joguei</option></select>:</h2></p>
@@ -499,6 +394,7 @@
 			<div class="table">
 				<div class="table1" id="painel"></div>			
 			</div>
+
 			<!--<p><h2 class="mai"style="color: var(--tx-color1);" >Mais:</h2></p>-->
 			<!--<ul>
 			<li><a style="font-size: 1vw;" href="file:///C:/Users/Usuario/Desktop/testes/BibliotecaPessoal/zerados.html"><button class="btn">Jogos Zerados</button></a></li>
@@ -514,11 +410,12 @@
 					<div class="plm"><li style="color: #b11623;">Placa-Mãe: ASUS TUF Gaming A520M-PLUS||</li><br></div>
 				</ul>
 			</div>-->
+
 			<p class="bibl">Biblioteca de Jogos, 2026</p>
-			</div>
+
 		</div>
 
-			<script>
+<script>
 			document.addEventListener("DOMContentLoaded", function () {
 				const button = document.button;
 				const body = document.body;
@@ -532,68 +429,69 @@
 				//const pesquisa  = document.getElementById('pesquisa');
 				
 				function mostrarJogosNaBiblioteca(status) {
-				const painel = document.getElementById("painel");
-				painel.innerHTML = "";
+					const painel = document.getElementById("painel");
+					painel.innerHTML = "";
 
-				const jogos = JSON.parse(localStorage.getItem("bibliotecaJogos")) || {};
-				
-
-				
-				for (let [nome, dados] of Object.entries(jogos)) {
+					const jogos = JSON.parse(localStorage.getItem("bibliotecaJogos")) || {};
 					
-					if (status == 'todos') {
-										let jogoDiv = document.createElement("div");
-					jogoDiv.className = "jg1"; // usa seu estilo atual
 
-					let nomeDiv = document.createElement("div");
-					nomeDiv.className = "nm1";
-					nomeDiv.textContent = nome;
+					
+					for (let [nome, dados] of Object.entries(jogos)) {
+						
+						if (status == 'todos') {
+							let jogoDiv = document.createElement("div");
+							jogoDiv.className = "jg1"; // usa seu estilo atual
 
-					let link = document.createElement("a");
-					link.href = `jogo.html?nome=${encodeURIComponent(nome)}`;
+							let nomeDiv = document.createElement("div");
+							nomeDiv.className = "nm1";
+							nomeDiv.textContent = nome;
 
-					let img = document.createElement("img");
-					img.src = dados.codigo;
-					img.style.width = "13vw";
-					img.style.height = "11vw";
-					img.style.borderRadius = "11px";
+							let link = document.createElement("a");
+							link.href = `jogo.html?nome=${encodeURIComponent(nome)}`;
 
-					link.appendChild(img);
-					jogoDiv.appendChild(nomeDiv);
-					jogoDiv.appendChild(link);
+							let img = document.createElement("img");
+							img.src = dados.codigo;
+							img.style.width = "13vw";
+							img.style.height = "11vw";
+							img.style.borderRadius = "11px";
 
-					painel.appendChild(jogoDiv);
+							link.appendChild(img);
+							jogoDiv.appendChild(nomeDiv);
+							jogoDiv.appendChild(link);
+
+							painel.appendChild(jogoDiv);
+						}
+
+						else if (dados.status == status) {
+							let jogoDiv = document.createElement("div");
+							jogoDiv.className = "jg1"; // usa seu estilo atual
+
+							let nomeDiv = document.createElement("div");
+							nomeDiv.className = "nm1";
+							nomeDiv.textContent = nome;
+
+							let link = document.createElement("a");
+							link.href = `jogo.html?nome=${encodeURIComponent(nome)}`;
+
+							let img = document.createElement("img");
+							img.src = dados.codigo;
+							img.style.width = "13vw";
+							img.style.height = "11vw";
+							img.style.borderRadius = "11px";
+
+							link.appendChild(img);
+							jogoDiv.appendChild(nomeDiv);
+							jogoDiv.appendChild(link);
+
+							painel.appendChild(jogoDiv);
+						}
 					}
-					else if (dados.status == status) {
-					let jogoDiv = document.createElement("div");
-					jogoDiv.className = "jg1"; // usa seu estilo atual
-
-					let nomeDiv = document.createElement("div");
-					nomeDiv.className = "nm1";
-					nomeDiv.textContent = nome;
-
-					let link = document.createElement("a");
-					link.href = `jogo.html?nome=${encodeURIComponent(nome)}`;
-
-					let img = document.createElement("img");
-					img.src = dados.codigo;
-					img.style.width = "13vw";
-					img.style.height = "11vw";
-					img.style.borderRadius = "11px";
-
-					link.appendChild(img);
-					jogoDiv.appendChild(nomeDiv);
-					jogoDiv.appendChild(link);
-
-					painel.appendChild(jogoDiv);
-					}
-				}
 				}
 				
 				document.getElementById("sel").addEventListener("change", function() {
-				const status = this.value
-				console.log(status);
-				mostrarJogosNaBiblioteca(status)
+					const status = this.value
+					console.log(status);
+					mostrarJogosNaBiblioteca(status)
 				});
 				
 				const page = location.pathname.split("/").pop();
@@ -607,7 +505,9 @@
 				if (savedTheme === "dark") {
 					body.classList.add("dark-mode");
 					body.classList.remove("light-mode");
-				} else {
+				} 
+
+				else {
 					body.classList.add("light-mode");
 					body.classList.remove("dark-mode");
 				}
@@ -636,6 +536,7 @@
 				
 
 			});
-			</script>
-	</body>
+
+</script>
+</body>
 </html>
