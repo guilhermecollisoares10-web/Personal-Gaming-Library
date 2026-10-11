@@ -111,7 +111,7 @@
 				color: var(--tx-color1);
 			}
 			
-							.sel {
+		.sel {
 		background-color: #121920;
 		border-radius: 15px;
 		cursor: pointer;
@@ -436,11 +436,51 @@
 	    font-family: "Italiana", sans-serif;
 		}
 		
+		.pesquisa {
+		position: fixed;
+		display: inline-block;
+		top: 3vw;
+		left: 2.5vw;
+		z-index: 111111111111111111;		
+		}
+		.pesquisaPainel {
+		opacity: 0;
+		margin: 30px;
+		width: 1000px;
+		height: 600px;
+		position: fixed;
+		}
 		}
 		</style>
 	<body id="body">
+		<div class="pesquisaPainel" id="pesquisa">
+		<label for="input">Selecione a opção desejada:</label>
+		<input type="text" id="input" list="lista-generos" placeholder="Digite ou selecione o gênero">
+		<datalist id="lista-generos">
+		  <option value="Ação">
+		  <option value="Aventura">
+		  <option value="RPG">
+		  <option value="Terror">
+		  <option value="Estratégia">
+		  <option value="Simulação">
+		  <option value="Esportes">
+		  <option value="Tiro (FPS/TPS)">
+		  <option value="Plataforma">
+		  <option value="Indie">
+		</datalist><br>
+		</div>
 		<div class="menu">
-		<!--<div class="zrd"><a style="font-size: 1vw;" href="file:///C:/Users/Usuario/Desktop/testes/BibliotecaPessoal/zerados.html"><button class="btnz">Jogos Zerados</button></a></div>-->
+		<!--<div class="pesquisa">
+		<button id="pesqui" class="btnz" >Opções de pesquisa</button>				
+							<div id="selPesq" class="mencont" style="max-width: 400px;">
+							<select id="selectFormal" class="color">
+							<option>Selecione um método de pesquisa</option>
+							<option id="genero">Genero</option>
+							<option id="acao">Açao</option>
+							</select>
+							</div>
+		</div>-->
+							
 		<div class="abn"><a style="font-size: 1vw;" href="Adicionar_Jogos.html"><button class="btna">Adicionar Jogos</button></a></div>
 		<h1 class="bar"><div class="bib">Biblioteca de Jogos</div></h1>	
 		<div class="est"><a style="font-size: 1vw;" href="Estatísticas.html"><button class="btne">Estatísticas</button></a></div>
@@ -486,12 +526,19 @@
 				const btnl = document.getElementById('btnlg');
 				const cfg  = document.getElementById('btnc');
 				const con  = document.getElementById('cont');
+				//const selPesq  = document.getElementById('selPesq');
+				//const btnp  = document.getElementById('pesqui');
+				//const genero  = document.getElementById('selectFormal');
+				//const pesquisa  = document.getElementById('pesquisa');
 				
 				function mostrarJogosNaBiblioteca(status) {
 				const painel = document.getElementById("painel");
 				painel.innerHTML = "";
 
 				const jogos = JSON.parse(localStorage.getItem("bibliotecaJogos")) || {};
+				
+
+				
 				for (let [nome, dados] of Object.entries(jogos)) {
 					
 					if (status == 'todos') {
@@ -549,13 +596,12 @@
 				mostrarJogosNaBiblioteca(status)
 				});
 				
-				// Nome da página atual (ex: "biblioteca de jogos.html")
 				const page = location.pathname.split("/").pop();
 
-				// Chave única para cada página
+
 				const key = "theme_" + page;
 
-				// Carregar tema salvo
+
 				const savedTheme = localStorage.getItem(key);
 
 				if (savedTheme === "dark") {
@@ -566,26 +612,28 @@
 					body.classList.remove("dark-mode");
 				}
 
-				// Botão modo escuro
+
 				btnd.addEventListener("click", function () {
 					body.classList.remove("light-mode");
 					body.classList.add("dark-mode");
 					localStorage.setItem(key, "dark");
 				});
 
-				// Botão modo claro
 				btnl.addEventListener("click", function () {
 					body.classList.remove("dark-mode");
 					body.classList.add("light-mode");
 					localStorage.setItem(key, "light");
 				});
 
-				// Mostrar/ocultar configurações
+				
 				cfg.addEventListener("click", function () {
 					con.classList.toggle("show");
 				});
+						
+
 				
 				mostrarJogosNaBiblioteca('todos');
+				
 
 			});
 			</script>
